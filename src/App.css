@@ -1,38 +1,646 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* HEADER */
+Header {
+  width: 1400px;
+  height: 61px;
+  top: 31px;
+  left: 0px;
+  position: absolute;
+  border: 1px red solid;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#header .container{
+  display: flex;
+  border: 1px solid red;
+  position: absolute;
+  width: 40.8px;
+  height: 29px;
+  left: 717.2px;
+  top: 0px;
+}
+
+#header .img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header .arrow{
+  border: 1px solid red;
+  position: absolute;
+  width: 1vw;
+  height: 13px;
+  left: 68px;
+  top: 8px;
+}
+
+/*MAIN*/
+/* BOX 1 */
+
+#home {
+  border: 1px solid rgb(76, 0, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 940px;
+}
+
+#home .container{
+  border: 1px solid rgb(33, 175, 80);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 90px;
+}
+
+#home .container .left .title h1{
+  border: 1px solid rgb(0, 255, 0);
+  position: absolute;
+  width: 497px;
+  height: 100vh;
+  left: 248px;
+  top: 132px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: -0.02em;
+  color: #151516;
+}
+
+#home .container .left .title h2{
+  position: absolute;
+  width: 311px;
+  height: 21px;
+  left: 248px;
+  top: 167px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+  color: #151516;
+}
+
+#home .container .left .card{
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+  position: absolute;
+  width: 215px;
+  height: 50px;
+  left: 300px;
+  top: 218px;
+}
+
+#home .container .left .card .iugu h1{
+  width: 100px;
+  position: absolute;
+  left: 20%;
+  top: 70%;
+  font-size: 10px;
+  color: #E1DEE8;
+
+}
+
+#home .container .left .card .iugu img{
+  width: 28px;
+  position: absolute;
+  left: 55%;
+  top: 75%;
+}
+
+/* BOX 2 */
+
+#home .container .left .label {
+  /* border: 1px red solid; */
+  position: absolute;
+  left: 248px;
+  top: 300px;
+  font-size: 12px;
+}
+
+#home .container .left .label form{
+  width: 495px;
+}
+
+#home .container .left .label form .row{
+  display: flex;
+}
+
+#home .container .left .label .inputBox span{
+  font-size: 13px;
+  color: #666173;
+}
+
+#home .container .left .label .inputBox{
+  margin-bottom: 30px;
+}
+
+#home .container .left .label .inputBox input{
+  cursor: pointer;
+  outline: none;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  width: 100%;
+  border:  #a9a1bd;
+  padding: 10px 0px;
+  font-size: 16px;
+}
+
+#home .container .left .label .flex{
+  display: flex;
+  gap: 02px;
+}
+
+#home .container .left .label .inputBox h1{
+  width: 95%;
+  height: 1px;
+  border: 1px solid #F4F3F6;
+  margin-top: 1px;
+}
+
+#home .container .left .label .submit-btn{
+  width: 90%;
+  font-size: 14px;
+  padding: 12px;
+  font-weight: 400;
+  border-radius: 25px;
+  background: #191847;
+  color: #ffffff;
+  height: 50px;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#home .container .left .label .submit-btn:hover{
+  transform: scale(1);
+  border: 2px solid #302725;
+  background: #1f1d69;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+/* BOX 3 */
+
+#home .container .right{
+  /* border: 1px solid rgb(209, 255, 7); */
+  margin-left: 100px;
+  margin-top: 27px;
+  width: 50%;
+  height: 100vh;
+}
+
+#home .container .right .email{
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  left: 900px;
+  font-size: 20px;
+  top: 139px;
+}
+
+#home .container .right .email input{
+  width: 150px;
+  height: 24px;
+  top: 164px;
+  font-size: 12px;
+  margin-top: 6px;
+  outline: none;
+  border: 1px solid #F4F3F6;
+  border-radius: 12px;
+}
+
+#home .right .card{
+  /* border: 1px solid red; */
+  position: absolute;
+  width: 330px;
+  font-family: 'DM Sans', sans-serif;
+  left: 900px;
+  height: 230px;
+  top: 218px;
+}
+
+#home .right .card .line1{
+ height: 100px;
+  left: 900px;
+  top: 218px; 
+  border: 1px solid #191847;
+  border-radius: 15px;
+}
+
+#home .right .card .line1 h1{
+  /* border: 1px solid red; */
+  margin:  20px 20px 0px;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 18px;
+}
+
+#home .right .card .line1 p{
+  /* border: 1px solid red; */
+  font-size: 12px;
+  width: 180px;
+  font-weight: 400;
+  margin-left: 20px;
+  font-style: normal;
+  color: #191847;
+  line-height: 16px;
+  margin-top: 5px;
+}
+
+#home .right .card .line1 h2{
+  width: 40px;
+  height: 16px;
+  left: 200px;
+  top: 47.5px;
+  position: absolute;
+  background: #F5850B;
+  border-radius: 10px;
+}
+
+#home .right .card .line1 h3{
+  width: 40px;
+  height: 16px;
+  font-size: 10px;
+  color: #FFFFFF;
+  font-weight: 400;
+  left: 208px;
+  top: 49.5px;
+  position: absolute;
+}
+
+#home .right .card .line1 .label input{
+  width: 16px;
+  height: 15px;
+  border-radius: 40px;
+  position: absolute;
+  left: 298px;
+  top: 48px;
+  cursor: pointer;
+}
+
+#home .right .card .line1 h4{
+  font-size: 10px;
+  width: 180px;
+  font-weight: 400;
+  margin-left: 20px;
+  margin-top: 5px;
+  font-style: normal;
+  color: #F5850B;
+  line-height: 13px;
+}
+
+#home .right .card .line2{
+  height: 100px;
+  left: 900px;
+  top: 218px; 
+  margin-top: 15px;
+  border: 1px solid #191847;
+  border-radius: 15px;
+ }
+
+ #home .right .card .line2 h1{
+  /* border: 1px solid red; */
+  margin:  20px 20px 0px;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 18px;
+}
+
+#home .right .card .line2 p{
+  /* border: 1px solid red; */
+  font-size: 12px;
+  width: 180px;
+  font-weight: 400;
+  margin-left: 20px;
+  font-style: normal;
+  color: #191847;
+  line-height: 16px;
+  margin-top: 5px;
+}
+
+#home .right .card .line2 h2{
+  width: 40px;
+  height: 16px;
+  left: 200px;
+  top: 162px;
+  position: absolute;
+  background: #F5850B;
+  border-radius: 10px;
   }
+
+#home .right .card .line2 h3{
+  width: 40px;
+  height: 16px;
+  font-size: 10px;
+  color: #FFFFFF;
+  font-weight: 400;
+  left: 212px;
+  top: 164px;
+  position: absolute;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#home .right .card .line2 .label input{
+  width: 16px;
+  height: 15px;
+  position: absolute;
+  left: 298px;
+  top: 162.5px;
+  cursor: pointer;
+  background: #191847
+  }
+
+#home .right .card .line2 h4{
+  font-size: 10px;
+  width: 180px;
+  font-weight: 400;
+  margin-left: 20px;
+  margin-top: 5px;
+  font-style: normal;
+  color: #F5850B;
+  line-height: 13px;
+}
+
+#home .container .right .about p{
+  font-size: 12px;
+  position: absolute;
+  color: #151516;
+  width: 150px;
+  left: 1000px;
+  top: 460px;
+}
+
+#home .container .right .about img{
+  position: absolute;
+  width: 15px;
+  left: 1100px;
+  top: 460px;
+  cursor: pointer;
+}
+
+
+  /* FOOTER*/
+
+footer {
+  font-family: 'DM Sans', sans-serif;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 31px;
+  left: 0px;
+  position: absolute;
+    /* border: 1px red solid; */
+}
+  
+#header2 .container{
+  width: 20px;
+  display: flex;
+  /* border: 1px solid rgb(129, 37, 37); */
+  position: absolute;
+  top: 0px;
+}
+  
+#header2 .assets{
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+  
+  #header2 .arrow{
+  /* border: 1px solid red; */
+  position: absolute;
+  width: 1vw;
+  height: 13px;
+  left: 68px;
+  top: 8px;
+  }
+
+  #header2 .ellipse{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 730px;
+  top: 115px;
+  border-radius: 50px;
+  border: 2px solid #F4F3F6;
 }
 
-.App-link {
-  color: #61dafb;
+#header2 .ellipse h2{
+  margin-top: 15px;
+  margin-left: 18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#header2 .success{
+  /* border: 1px red solid; */
+  position: absolute;
+  width: 220px;
+  height: 100px;
+  left: 660px;
+  top: 190px;
 }
+
+#header2 .success h1{
+  margin-left: 55px;
+  font-family: 'Google Sans' sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: #191847;
+}
+
+#header2 .success p{
+  font-family: 'Google Sans' sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #C9C5D4;
+  margin-left: -10px;
+  margin-top: 11px;
+}
+
+#header2 .cards{
+  position: absolute;
+  width: 343px;
+  height: 200px;
+  left: 600px;
+  top: 300px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+}
+
+#header2 .cards .line{
+  /* border: 1px solid red; */
+  position: absolute;
+  width: 310px;
+  height: 80px;
+  margin: 16px;
+  background: #F4F3F6;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+
+}
+
+#header2 .cards .line:hover{
+  transform: scale(1.1);
+  border: none;
+  background: #eceaf0;
+  cursor: pointer;
+}
+
+#header2 .cards .line h1{
+  /* border: 1px solid red; */
+  font-family: 'Google Sans', sans-serif;
+  margin-top: 10px;
+  margin-right: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: right;
+  color: #191847;
+}
+
+#header2 .cards .line p{
+  /* border: 1px solid red; */
+  font-family: 'Google Sans', sans-serif;
+  margin-top: 10px;
+  margin-right: 14px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: right;
+  color: #191847;
+}
+
+#header2 .cards .line h2{
+  /* border: 1px solid red; */
+  width: 40px;
+  height: 40px;
+  margin-left: 25px;
+  margin-top: -39px;
+  background: #E1DEE8;
+  border-radius: 50px;
+}
+
+#header2 .cards .line img{
+  /* border: 1px solid red; */
+  margin-left: 12px;
+  margin-top: 11px;
+}
+
+#header2 .email{
+  /* border: 1px red solid; */
+  margin-top: 114px;
+}
+
+#header2 .email span{
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #C9C5D4;
+  margin-left: 22px;
+}
+
+#header2 .email input{
+  border: 1px rgb(56, 47, 47) solid;
+  width: 160px;
+  margin-left: 105px;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #151516;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+#header2 .cpf{
+  font-family:  sans-serif;
+  /* border: 1px red solid; */
+  margin-top: 15px;
+}
+
+#header2 .cpf span{
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #C9C5D4;
+  margin-left: 22px;
+}
+
+#header2 .cpf input{
+  border: 1px rgb(56, 47, 47) solid;
+  width: 120px;
+  margin-left: 167px;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #151516;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+#header2 .signature{
+  position: absolute;
+  width: 152px;
+  left: 705px;
+  top: 550px;
+  font-weight: 700;
+  font-size: 12px; 
+  letter-spacing: 0.05em; 
+  color: #191847;
+}
+
+#header2 .submit-btn{
+  position: absolute;
+  width: 310px;
+  height: 50px;
+  left: 615px;
+  font-size: 12px;
+  top: 580px;
+  background: #191847;
+  color: #FFFFFF;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#header2 .submit-btn:hover{
+  transform: scale(1);
+  border: 2px solid #302725;
+  background: #1f1d69;
+  font-weight: 400;
+}
+
+
