@@ -1,24 +1,13 @@
 import React from 'react';
-import Logow from './img/logow.png';
-import Arrow from './img/arrow.png';
-import Star from './img/star.png';
-import True from './img/true.png';
+import '../../App.css';
+import Star from '../../assets/img/star.png';
+import True from '../../assets/img/true.png';
 
-
-function Footer() {
-    return(
-        <footer>
-        
-            <section id='header2'>
-    
-                <div className='assets'>
-                    <img src={Logow}/>  
-                </div>
-    
-                <div className='arrow'>
-                    <img src={Arrow}/>  
-                </div>
-    
+function Success() {
+  return (
+    <footer>     
+        <section id='header2'>
+            <div className='center'>
                 <div className='ellipse'>
                     <h2>
                          <img src={True}/>
@@ -34,8 +23,8 @@ function Footer() {
                 <div className='cards'>
     
                     <div className='line'>
-                    <h1>Anual | Parcelado</h1>
-                    <p>R$ 479,90 | 10x R$ 47,99</p>
+                        <h1>Anual | Parcelado</h1>
+                        <p>R$ 479,90 | 10x R$ 47,99</p>
                         <h2>
                             <img src={Star}/>
                         </h2>
@@ -52,18 +41,16 @@ function Footer() {
                     </div>
     
                 </div>
-    
                 
-                <div className='signature'>
-                    <p>Gerenciar assinatura</p>
-                </div>
+            <div className='signature'>
+                <p>Gerenciar assinatura</p>
+            </div>
     
-                <input type="submit" value="IR PARA HOME" class="submit-btn"></input>
-                
-            </section>
-    
-        </footer>
-    );
+            <input type="submit" value="IR PARA HOME" class="submit-btn"></input>   
+            </div>  
+        </section>
+    </footer>
+  );
 }
 
-export default Footer
+export default Success;

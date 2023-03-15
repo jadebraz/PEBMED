@@ -1,15 +1,12 @@
 import React from 'react';
-import Logow from './img/logow.png';
-import Arrow from './img/arrow.png';
+import '../../App.css';
+import Logow from '../../assets/img/logow.png';
+import Arrow from '../../assets/img/arrow.png';
 
-
-function Header () {
-    return (
-      
+function Header() {
+  return (
     <header>  
-           
         <section id='header'>
-
             <div className='img'>
                 <img src={Logow}/>  
             </div>
@@ -17,12 +14,9 @@ function Header () {
             <div className='arrow'>
             <   img src={Arrow}/>  
             </div>
-
         </section>
-
     </header> 
+  );
+}
 
-    );
-  }
-  
-  export default Header;
+export default Header;
