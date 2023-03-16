@@ -32,12 +32,12 @@ function Success() {
     
                     <div className='email'>
                         <span>E-mail</span>
-                        <input type='email' placeholder='fulano@cicrano.com.br'></input>
+                        <p>fulano@cicrano.com.br</p>
                     </div>
     
                     <div className='cpf'>
                         <span>CPF</span>
-                        <input type='number' placeholder='000.000.000-00'></input>
+                        <p>000.000.000-00</p>
                     </div>
     
                 </div>

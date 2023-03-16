@@ -148,7 +148,7 @@ function Checkout() {
                 <h2></h2>
                 <h3>fulano@cicrano.com.br</h3>
               </div>
-            
+              
             <div className='card'>
               { offers?.map(offer => (
                 <>
@@ -162,15 +162,17 @@ function Checkout() {
                       <h4>{`${offer.installments.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'})}x de ${(offer.fullPrice / offer.installments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'})}/mês`}</h4>
                     </div>
                     <div className='containerInput'>
-                      <input name="plan" type='radio' />
+                      <input name= "plan" type="radio"/>
                     </div>
+                    
                   </div>
                   <br />
                 </>
               ))}
             </div>
-      
+            
             <div className='about'>
+                <h1></h1>
                 <p>Sobre a cobrança</p>
                 <img src={Interrogation} />  
             </div>

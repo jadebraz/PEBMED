@@ -284,17 +284,15 @@ header{
   font-weight: 400;
 }
 
-#home .right .card .line1 .containerInput{
-  width: 100%;
+#home .right .card .line1 .containerInput input{
+  width: 15px;
+  height: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-#home .right .card .line1 .containerInput input{
-  width: 16px;
-  height: 15px;
-  top: 38px;
+  border-radius: 10px;
+  margin-top: 41px;
+  margin-left: 40px;
   cursor: pointer;
 }
 
@@ -308,6 +306,7 @@ header{
   color: #F5850B;
   line-height: 13px;
 }
+
 
 #home .container .right .right2 .about p{
   display: flex;
@@ -408,20 +407,20 @@ footer {
   margin: 16px;
   background: #F4F3F6;
   border-radius: 15px;
-  transition: all 0.3s ease;
-
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 #header2 .cards .line:hover{
-  transform: scale(1.1);
-  border: none;
-  background: #eceaf0;
-  cursor: pointer;
+  transform: scale(1);
+  background: #ececf8;
+  font-weight: 400;
 }
+
 
 #header2 .cards .line h1{
   font-family: 'Google Sans', sans-serif;
-  margin-top: 13px;
+  margin-top: 15px;
   margin-right: 16px;
   display: flex;
   align-items: flex-end;
@@ -461,7 +460,7 @@ footer {
 }
 
 #header2 .email{
-  margin-top: 1px;
+  margin-top: 23px;
 }
 
 #header2 .email span{
@@ -474,23 +473,20 @@ footer {
   margin-left: 22px;
 }
 
-#header2 .email input{
-  border: 1px rgb(56, 47, 47) solid;
+#header2 .email p{
   width: 160px;
-  margin-left: 105px;
+  margin-left: 170px;
   font-family: sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   color: #151516;
-  outline: none;
-  border: none;
-  cursor: pointer;
+  margin-top: -19px;
 }
 
 #header2 .cpf{
   font-family:  sans-serif;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 #header2 .cpf span{
@@ -500,21 +496,18 @@ footer {
   font-size: 14px;
   line-height: 18px;
   color: #C9C5D4;
-  margin-left: 22px;
+  margin-left: 24px;
 }
 
-#header2 .cpf input{
-  border: 1px rgb(56, 47, 47) solid;
+#header2 .cpf p{
   width: 120px;
-  margin-left: 167px;
+  margin-left: 169px;
   font-family: sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   color: #151516;
-  outline: none;
-  border: none;
-  cursor: pointer;
+  margin-top: -16px;
 }
 
 #header2 .signature{
