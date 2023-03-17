@@ -180,7 +180,7 @@ header{
 }
 
 #home .container .left .label .submit-btn{
-  width: 79%;
+  width: 80%;
   font-size: 14px;
   padding: 12px;
   font-weight: 400;
@@ -191,11 +191,11 @@ header{
   margin-top: 5px;
   cursor: pointer;
   transition: all 0.2s ease;
+  border: none;
 }
 
 #home .container .left .label .submit-btn:hover{
   transform: scale(1);
-  border: 2px solid #302725;
   background: #1f1d69;
   color: #ffffff;
   font-weight: 400;
@@ -559,7 +559,6 @@ footer {
 
 #header2 .submit-btn:hover{
   transform: scale(1);
-  border: 2px solid #302725;
   background: #1f1d69;
   font-weight: 400;
 }
