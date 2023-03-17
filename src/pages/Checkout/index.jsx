@@ -9,6 +9,10 @@ import Logo from '../../assets/img/elo.png';
 import Visa from '../../assets/img/visa.png';
 import Iugu from '../../assets/img/iugu.png';
 import Interrogation from '../../assets/img/interrogation.png';
+import { inputcpfmask } from '../../utils/input-mask-cpf';
+import { inputmaskcardnumber } from '../../utils/input-mask-card-number';
+import { inputmaskexpirationdate } from '../../utils/input-mask-expiration-date';
+import { inputmasknumber } from '../../utils/input-mask-number';
 
 
 function Checkout() {
@@ -22,56 +26,19 @@ function Checkout() {
   const onChange = (event) => {
     const {value, name} = event.target;
 
-    let fieldvalue = value;
+    let fieldvalue;
 
     if (name === 'cpf') {
-
-      fieldvalue = fieldvalue.replace(/\D/g,"");
-
-      fieldvalue = fieldvalue.replace(/(\d{3})(\d)/,"$1.$2");
-
-      fieldvalue = fieldvalue.replace(/(\d{3})(\d)/,"$1.$2");
-
-      fieldvalue = fieldvalue.replace(/(\d{3})(\d{1,2})$/,"$1-$2");
+      fieldvalue = inputcpfmask(value);
+    } else if (name === 'nCartao') {
+      fieldvalue = inputmaskcardnumber(value);
+    } else if (name === 'validade') {
+      fieldvalue = inputmaskexpirationdate(value);
+    } else if (name === 'cvv') {
+      fieldvalue = inputmasknumber(value);
     }
 
-    console.log(fieldvalue);
-
     setValues({...values, [name]: fieldvalue});
-
-
-    if (name === 'nCartao') {
-
-      fieldvalue = fieldvalue.replace(/(\d{4})(\d)/,"$1 $2");
-
-      fieldvalue = fieldvalue.replace(/(\d{4})(\d)/,"$1 $2");
-
-    }
-
-    console.log(fieldvalue);
-
-    setValues({...values, [name]: fieldvalue});
-
-
-  if (name === 'validade') {
-
-      fieldvalue = fieldvalue.replace(/(\d{2})(\d)/,"$1/$2");
-    }
-
-    console.log(fieldvalue);
-
-    setValues({...values, [name]: fieldvalue});
-
-
-  if (name === 'cvv') {
-    fieldvalue = fieldvalue.replace(/\D/g, '');
-  }
-    console.log(fieldvalue);
-
-    setValues({...values, [name]: fieldvalue});
-
-
-
   }
 
 

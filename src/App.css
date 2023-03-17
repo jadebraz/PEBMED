@@ -180,7 +180,7 @@ header{
 }
 
 #home .container .left .label .submit-btn{
-  width: 90%;
+  width: 79%;
   font-size: 14px;
   padding: 12px;
   font-weight: 400;
@@ -200,6 +200,7 @@ header{
   color: #ffffff;
   font-weight: 400;
 }
+
 
 #home .container .right{
   margin-left: 100px;
@@ -330,7 +331,6 @@ header{
   line-height: 13px;
 }
 
-
 #home .container .right .right2 .about p{
   display: flex;
   align-items: center;
@@ -349,6 +349,7 @@ header{
   margin-top: -15px;
   cursor: pointer;
 }
+
 
 footer {
   font-family: 'DM Sans', sans-serif;
@@ -562,6 +563,7 @@ footer {
   background: #1f1d69;
   font-weight: 400;
 }
+
 
 @media only screen and (max-width: 1300px) {
   header{
