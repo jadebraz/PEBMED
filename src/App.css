@@ -141,8 +141,31 @@ header{
   width: 100%;
   border:  #a9a1bd;
   padding: 10px 0px;
-  font-size: 16px;
+  font-size: 15px;
+  text-transform: uppercase;
 }
+
+#home .container .left .inputBox2{
+  font-size: 13px;
+  color: #666173;
+}
+
+#home .container .left .inputBox2 select{
+  display: flex;
+  border: none;
+  margin-top: 13px;
+  width: 97%;
+  margin-bottom: 17px;
+  cursor: pointer;
+  outline: none;
+}
+
+#home .container .left .inputBox2 h1{
+  border: 1px solid #F4F3F6;
+  width: 97%;
+  margin-bottom: 30px;
+}
+
 
 #home .container .left .label .flex{
   display: flex;

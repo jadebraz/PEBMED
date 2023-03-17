@@ -10,6 +10,7 @@ import Visa from '../../assets/img/visa.png';
 import Iugu from '../../assets/img/iugu.png';
 import Interrogation from '../../assets/img/interrogation.png';
 
+
 function Checkout() {
   const navigate = useNavigate();
 
@@ -17,10 +18,62 @@ function Checkout() {
 
   const [values, setValues] = useState() 
 
+
   const onChange = (event) => {
     const {value, name} = event.target;
-    setValues({...values, [name]: value});
+
+    let fieldvalue = value;
+
+    if (name === 'cpf') {
+
+      fieldvalue = fieldvalue.replace(/\D/g,"");
+
+      fieldvalue = fieldvalue.replace(/(\d{3})(\d)/,"$1.$2");
+
+      fieldvalue = fieldvalue.replace(/(\d{3})(\d)/,"$1.$2");
+
+      fieldvalue = fieldvalue.replace(/(\d{3})(\d{1,2})$/,"$1-$2");
+    }
+
+    console.log(fieldvalue);
+
+    setValues({...values, [name]: fieldvalue});
+
+
+    if (name === 'nCartao') {
+
+      fieldvalue = fieldvalue.replace(/(\d{4})(\d)/,"$1 $2");
+
+      fieldvalue = fieldvalue.replace(/(\d{4})(\d)/,"$1 $2");
+
+    }
+
+    console.log(fieldvalue);
+
+    setValues({...values, [name]: fieldvalue});
+
+
+  if (name === 'validade') {
+
+      fieldvalue = fieldvalue.replace(/(\d{2})(\d)/,"$1/$2");
+    }
+
+    console.log(fieldvalue);
+
+    setValues({...values, [name]: fieldvalue});
+
+
+  if (name === 'cvv') {
+    fieldvalue = fieldvalue.replace(/\D/g, '');
   }
+    console.log(fieldvalue);
+
+    setValues({...values, [name]: fieldvalue});
+
+
+
+  }
+
 
   const handleSubmitForm = async (event) => {
     event.preventDefault();
@@ -37,6 +90,7 @@ function Checkout() {
     api.get('/offer').then(response => setOffers(response.data));
   }, []);
 
+ 
   return (
     <main>
       <section id='home'>
@@ -87,7 +141,7 @@ function Checkout() {
 
                     <div className='inputBox'>
                       <span>Número do cartão</span>
-                      <input type='text' placeholder='0000 0000 0000 0000' maxlength='19' required name = 'nCartao' onChange={onChange}></input>
+                      <input type='text' placeholder='0000 0000 0000 0000' value={values?.nCartao || ''} maxlength='19' required name = 'nCartao' autoComplete='off' onChange={onChange}></input>
                       <h1></h1>
                     </div>
 
@@ -95,13 +149,13 @@ function Checkout() {
 
                       <div className='inputBox'>
                         <span>Validade</span>
-                        <input type='text' placeholder='MM/AA' maxlength='5' name ='validade' required onChange={onChange}></input>
+                        <input type='text' placeholder='MM/AA' maxlength='5'  value={values?.validade || ''}  name ='validade' autoComplete='off' required onChange={onChange}></input>
                         <h1></h1>
                       </div>
 
                       <div className='inputBox'>
                         <span>CVV</span>
-                        <input type='text' placeholder='000' maxlength='3' name = 'cvv' required onChange={onChange}></input>
+                        <input type='text' placeholder='000'  maxlength='3' name = 'cvv' autoComplete='off'  value={values?.cvv || ''} required onChange={onChange}></input>
                         <h1></h1>
                       </div>
 
@@ -109,25 +163,40 @@ function Checkout() {
 
                     <div className='inputBox'>
                       <span>Nome impresso no cartão</span>
-                      <input type='text' placeholder='Seu nome' maxlength='25' name = 'nome' required  onChange={onChange}></input>
+                      <input type='text' placeholder='Seu nome' maxlength='25' name = 'nome' required autoComplete='off' onChange={onChange}></input>
                       <h1></h1>
                     </div>
 
                     <div className='inputBox'>
                       <span>CPF</span>
-                      <input type='text' placeholder='000.000.000-00' maxlength='11' name = 'cpf' required onChange={onChange}></input>
+                        <input type='text' placeholder='000.000.000-00' value={values?.cpf || ''} maxlength='14' name = 'cpf' autoComplete='off' required onChange={onChange}></input>                   
                       <h1></h1>
                     </div>
 
                     <div className='inputBox'>
                       <span>Cupom</span>
-                      <input type='text' placeholder='Insira aqui' maxlength='20' name = 'cupom' required onChange={onChange}></input>
+                      <input type='text' placeholder='Insira  aqui' maxlength='10' name = 'cupom' required autoComplete='off' onChange={onChange}></input>
                       <h1></h1>
                     </div>
 
-                    <div className='inputBox'>
+                    <div className='inputBox2'>
                       <span>Número de parcelas</span>
-                      <input type='text' placeholder='Selecionar' maxlength='2' name = 'parcelas' required onChange={onChange}></input>
+
+                        <select name="cars" id="cars">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+
                       <h1></h1>
                     </div>
 
@@ -181,6 +250,10 @@ function Checkout() {
           </div>
         </div>
       </section>
+
+     
+
+
     </main>     
   );
 }
