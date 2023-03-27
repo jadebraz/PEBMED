@@ -1,3 +1,15 @@
+# About
+
+It is a project that aims to organize customer information in a database called Registration Form.
+
+# Technologies
+
+ - **React Js**, is declarative, efficient and allows you to compose complete UIs from small and isolated codes, the so-called components. In addition it uses the JSX extension, which is basically a combination of HTML and JavaScript that makes writing the coding easier.  
+
+ - **Axios**, is an HTTP client based on **Promises** to make requests. It can be used in the browser as in Node.js or any API service.
+
+ - **Node.js**, allows data to be sent to the front end without requiring multiple connections that standardize the information and delay the execution of the request.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

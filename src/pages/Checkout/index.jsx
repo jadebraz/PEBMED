@@ -1,7 +1,8 @@
 import '../../App.css';
+import './checkout.css';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import {api} from "../../services/ApiServices";
+import {api} from "../../services/config";
 import Mastercard from '../../assets/img/mastercard.png';
 import Cinza from '../../assets/img/cinza.png';
 import American from '../../assets/img/american.png';
@@ -9,10 +10,10 @@ import Logo from '../../assets/img/elo.png';
 import Visa from '../../assets/img/visa.png';
 import Iugu from '../../assets/img/iugu.png';
 import Interrogation from '../../assets/img/interrogation.png';
-import { inputcpfmask } from '../../utils/input-mask-cpf';
-import { inputmaskcardnumber } from '../../utils/input-mask-card-number';
-import { inputmaskexpirationdate } from '../../utils/input-mask-expiration-date';
-import { inputmasknumber } from '../../utils/input-mask-number';
+import { inputcpfmask } from '../../validation/input-mask-cpf';
+import { inputmaskcardnumber } from '../../validation/input-mask-card-number';
+import { inputmaskexpirationdate } from '../../validation/input-mask-expiration-date';
+import { inputmasknumber } from '../../validation/input-mask-number';
 
 
 function Checkout() {
@@ -62,6 +63,7 @@ function Checkout() {
     <main>
       <section id='home'>
         <div className='container'>
+         
           <div className='left'>
             <div className='title'>
 
@@ -122,7 +124,7 @@ function Checkout() {
 
                       <div className='inputBox'>
                         <span>CVV</span>
-                        <input type='text' placeholder='000'  maxlength='3' name = 'cvv' autoComplete='off'  value={values?.cvv || ''} required onChange={onChange}></input>
+                        <input type='text' placeholder='000' maxlength='3' name = 'cvv' autoComplete='off'  value={values?.cvv || ''} required onChange={onChange}></input>
                         <h1></h1>
                       </div>
 
@@ -142,7 +144,7 @@ function Checkout() {
 
                     <div className='inputBox'>
                       <span>Cupom</span>
-                      <input type='text' placeholder='Insira  aqui' maxlength='10' name = 'cupom' required autoComplete='off' onChange={onChange}></input>
+                      <input type='text' placeholder='Insira  aqui' maxlength='10' name = 'cupom' autoComplete='off' onChange={onChange}></input>
                       <h1></h1>
                     </div>
 
@@ -205,21 +207,17 @@ function Checkout() {
                   <br />
                 </>
               ))}
-            </div>
-            
-            <div className='about'>
+
+             <div className='about'>
                 <h1></h1>
                 <p>Sobre a cobrança</p>
                 <img src={Interrogation} />  
+            </div> 
             </div>
-
             </div>
-          </div>
+         </div>
         </div>
       </section>
-
-     
-
 
     </main>     
   );
