@@ -2,7 +2,6 @@ import '../../App.css';
 import './checkout.css';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import {api} from "../../services/config";
 import Mastercard from '../../assets/img/mastercard.png';
 import Cinza from '../../assets/img/cinza.png';
 import American from '../../assets/img/american.png';
@@ -14,7 +13,8 @@ import { inputcpfmask } from '../../validation/input-mask-cpf';
 import { inputmaskcardnumber } from '../../validation/input-mask-card-number';
 import { inputmaskexpirationdate } from '../../validation/input-mask-expiration-date';
 import { inputmasknumber } from '../../validation/input-mask-number';
-
+import {SubscriptionServices} from '../../services/SubscriptionServices';
+import { OfferServices } from '../../services/OfferServices';
 
 function Checkout() {
   const navigate = useNavigate();
@@ -55,11 +55,13 @@ function Checkout() {
     }
   }
 
-    // const offerServices = new offerServices();
-    // const response = await offerServices.getoffer();
+  
 
   useEffect(() => {
-    api.get('/offer').then(response => setOffers(response.data));
+    const offerServices = new OfferServices();
+    offerServices.getOffer().then(response => {
+      setOffers(response.data)
+    })
   }, []);
 
  
