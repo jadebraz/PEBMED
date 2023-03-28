@@ -44,14 +44,15 @@ function Checkout() {
 
 
   const handleSubmitForm = async (event) => {
-    event.preventDefault();
-    const subscriptionServices = new SubscriptionServices();
-    const response = await subscriptionServices.createSubscription(values);
-     
-    if (response.status === 200) {
+    try{
+      event.preventDefault();
+
+      const subscriptionServices = new SubscriptionServices();
+      await subscriptionServices.createSubscription(values);
+
       navigate('/success');
-    } else {
-      alert ('Erro na realização da assinatura')
+    } catch(error) {
+      alert ('Erro na realização da assinatura');
     }
   }
 
