@@ -45,7 +45,8 @@ function Checkout() {
 
   const handleSubmitForm = async (event) => {
     event.preventDefault();
-     const response = await api.post('/subscription', values);
+    const subscriptionServices = new SubscriptionServices();
+    const response = await subscriptionServices.createSubscription(values);
      
     if (response.status === 200) {
       navigate('/success');
@@ -53,6 +54,9 @@ function Checkout() {
       alert ('Erro na realização da assinatura')
     }
   }
+
+    // const offerServices = new offerServices();
+    // const response = await offerServices.getoffer();
 
   useEffect(() => {
     api.get('/offer').then(response => setOffers(response.data));
