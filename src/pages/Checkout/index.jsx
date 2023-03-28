@@ -52,17 +52,20 @@ function Checkout() {
 
       navigate('/success');
     } catch(error) {
-      alert ('Erro na realização da assinatura');
+      alert ('Erro na realização da assinatura.');
     }
   }
 
   
-
   useEffect(() => {
-    const offerServices = new OfferServices();
-    offerServices.getOffer().then(response => {
-      setOffers(response.data)
-    })
+
+        const offerServices = new OfferServices();
+        offerServices.getOffer().then(response => {
+        setOffers(response.data);
+      }).catch(error => {
+        alert ('Erro na busca dos planos.');
+      })
+
   }, []);
 
  
