@@ -23,6 +23,7 @@ function Checkout() {
   const [offers, setOffers] = useState()
 
   const [values, setValues] = useState() 
+  const [isSplittableOfferSelected, setIsSplittableOfferSelected] = useState();
 
   
   const onChange = (event) => {
@@ -73,6 +74,10 @@ function Checkout() {
       })
 
   }, []);
+
+  const toggleInputPlan = (offer) => {
+    setIsSplittableOfferSelected(offer.splittable);
+  }
 
  
   return (
@@ -163,26 +168,27 @@ function Checkout() {
                       <input type='text' placeholder='Insira  aqui' maxlength='10' name = 'cupom' autoComplete='off' onChange={onChange}></input>
                       <h1></h1>
                     </div>
+                    {isSplittableOfferSelected && (
+                      <div className='inputBox2'>
+                        <span>Número de parcelas</span>
 
-                    <div className='inputBox2'>
-                      <span>Número de parcelas</span>
+                          <select name="cars" id="cars">
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                          </select>
 
-                        <select name="cars" id="cars">
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
-                          <option value="11">11</option>
-                          <option value="12">12</option>
-                        </select>
-
-                      <h1></h1>
-                    </div>
+                        <h1></h1>
+                      </div>
+                    )}
 
                   </div>
 
@@ -215,7 +221,7 @@ function Checkout() {
                       <h4>{`${offer.installments.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'})}x de ${(offer.fullPrice / offer.installments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'})}/mês`}</h4>
                     </div>
                     <div className='containerInput'>
-                      <input name= "plan" type="radio"/>
+                      <input name= "plan" type="radio" onClick={() => {toggleInputPlan(offer)}}/>
                     </div>
                     
                   </div>
