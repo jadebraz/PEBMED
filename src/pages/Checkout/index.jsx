@@ -1,5 +1,6 @@
 import '../../App.css';
 import './checkout.css';
+import { isValidFormValues } from '../../validation/isValidFormValues';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import Mastercard from '../../assets/img/mastercard.png';
@@ -23,7 +24,7 @@ function Checkout() {
 
   const [values, setValues] = useState() 
 
-
+  
   const onChange = (event) => {
     const {value, name} = event.target;
 
@@ -33,7 +34,7 @@ function Checkout() {
       fieldvalue = inputcpfmask(value);
     } else if (name === 'nCartao') {
       fieldvalue = inputmaskcardnumber(value);
-    } else if (name === 'validade') {
+    } else if (name === 'expirationDate') {
       fieldvalue = inputmaskexpirationdate(value);
     } else if (name === 'cvv') {
       fieldvalue = inputmasknumber(value);
@@ -47,11 +48,16 @@ function Checkout() {
     try{
       event.preventDefault();
 
+      isValidFormValues(values);
+
       const subscriptionServices = new SubscriptionServices();
       await subscriptionServices.createSubscription(values);
 
       navigate('/success');
     } catch(error) {
+      if (error) {
+        alert(error);
+      }
       alert ('Erro na realização da assinatura.');
     }
   }
@@ -128,7 +134,7 @@ function Checkout() {
 
                       <div className='inputBox'>
                         <span>Validade</span>
-                        <input type='text' placeholder='MM/AA' maxlength='5'  value={values?.validade || ''}  name ='validade' autoComplete='off' required onChange={onChange}></input>
+                        <input type='text' placeholder='MM/AA' maxlength='7'  value={values?.expirationDate || ''}  name ='expirationDate' autoComplete='off' required onChange={onChange}></input>
                         <h1></h1>
                       </div>
 
@@ -162,7 +168,6 @@ function Checkout() {
                       <span>Número de parcelas</span>
 
                         <select name="cars" id="cars">
-                          <option value="1">1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
                           <option value="4">4</option>
