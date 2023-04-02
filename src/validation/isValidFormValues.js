@@ -9,7 +9,7 @@ export const isValidFormValues = (values) => {
     }
 
     if(!isValidExpirationDate(expirationDate)) {
-        throw new Error('Cartão expirado');
+        throw new Error('Data de expiração inválida ou no passado.');
     }
 }
 
@@ -40,6 +40,10 @@ const isValidCpf = (cpf) => {
 const isValidExpirationDate = (expirationDate) => {
     const month = expirationDate.split('/')[0];
     const year = expirationDate.split('/')[1];
+
+    if (month < 1 || month > 12) {
+        return false;
+    }
 
     console.log(month);
     console.log(year);

@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../../App.css';
 import './success.css'
 import Star from '../../assets/img/star.png';
 import True from '../../assets/img/true.png';
+import { useLocation } from 'react-router-dom';
 
 function Success() {
+
+    const location = useLocation();
+
+    useEffect(()=>{
+        console.log(location);
+    }, [])
+
+
   return (
     <footer>     
         <section id='header2'>
@@ -24,8 +33,8 @@ function Success() {
                 <div className='cards'>
     
                     <div className='line'>
-                        <h1>Anual | Parcelado</h1>
-                        <p>R$ 479,90 | 10x R$ 47,99</p>
+                        <h1>{ location.state.offerSelected.title}</h1>
+                        <p> {location.state.offerSelected.fullPrice.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} | {location.state.installments}x de {(location.state.offerSelected.fullPrice / location.state.installments).toLocaleString('pt-BR', {style:'currency', currency: 'BRL'})}</p>
                         <h2>
                             <img src={Star}/>
                         </h2>
@@ -38,7 +47,7 @@ function Success() {
     
                     <div className='cpf'>
                         <span>CPF</span>
-                        <p>000.000.000-00</p>
+                        <p>{ location.state.cpf}</p>
                     </div>
     
                 </div>
