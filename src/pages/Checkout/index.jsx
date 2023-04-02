@@ -27,7 +27,7 @@ function Checkout() {
   const onChange = (event) => {
     const { value, name } = event.target;
 
-    let fieldvalue;
+    let fieldvalue = value;
 
     if (name === "cpf") {
       fieldvalue = inputcpfmask(value);
@@ -39,7 +39,7 @@ function Checkout() {
       fieldvalue = inputmasknumber(value);
     }
 
-    setValues({ ...values, [name]: fieldvalue });
+    setValues({ ...values, [name]: fieldvalue});
   };
 
   const handleSubmitForm = async (event) => {
@@ -172,6 +172,7 @@ function Checkout() {
                         maxLength="25"
                         name="nome"
                         required
+                        value={values?.nome || ""}
                         autoComplete="off"
                         onChange={onChange}
                       ></input>
@@ -205,6 +206,7 @@ function Checkout() {
                       ></input>
                       <h1></h1>
                     </div>
+
                     {offerSelected?.splittable && (
                       <div className="inputBox2">
                         <span>Número de parcelas</span>

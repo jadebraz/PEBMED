@@ -33,7 +33,7 @@ function Success() {
                 <div className='cards'>
     
                     <div className='line'>
-                        <h1>{ location.state.offerSelected.title}</h1>
+                        <h1>{location.state.offerSelected.title}</h1>
                         <p> {location.state.offerSelected.fullPrice.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} | {location.state.installments}x de {(location.state.offerSelected.fullPrice / location.state.installments).toLocaleString('pt-BR', {style:'currency', currency: 'BRL'})}</p>
                         <h2>
                             <img src={Star}/>
