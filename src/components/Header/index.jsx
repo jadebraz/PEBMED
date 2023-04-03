@@ -3,22 +3,21 @@ import '../../App.css';
 import './header.css';
 import Logow from '../../assets/img/logow.png';
 import Arrow from '../../assets/img/arrow.png';
+import {Container, Logo, IArrow} from './styles';
 
 function Header() {
   return (
-    <header>  
-        <section id='header'>
-         
+    <Container>  
+        
             <div className='img'>
-                <img src={Logow}/>  
+                <Logo src={Logow}/>  
             </div>
 
             <div className='arrow'>
-                <img src={Arrow}/>  
+                <IArrow src={Arrow}/>  
             </div>
         
-        </section>
-    </header> 
+    </Container> 
   );
 }
 
