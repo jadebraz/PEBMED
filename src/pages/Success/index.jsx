@@ -56,7 +56,7 @@ function Success() {
                 <p>Gerenciar assinatura</p>
             </div>
     
-            <input type="submit" value="IR PARA HOME" class="submit-btn"></input>   
+            <input type="submit" value="IR PARA HOME" className="submit-btn"></input>   
             </div>  
         </section>
     </footer>

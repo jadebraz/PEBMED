@@ -14,7 +14,7 @@ function Header() {
             </div>
 
             <div className='arrow'>
-            <   img src={Arrow}/>  
+                <img src={Arrow}/>  
             </div>
         
         </section>

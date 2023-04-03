@@ -172,7 +172,6 @@ function Checkout() {
                         maxLength="25"
                         name="nome"
                         required
-                        value={values?.nome || ""}
                         autoComplete="off"
                         onChange={onChange}
                       ></input>
