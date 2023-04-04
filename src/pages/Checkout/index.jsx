@@ -16,6 +16,7 @@ import { inputmaskexpirationdate } from "../../validation/input-mask-expiration-
 import { inputmasknumber } from "../../validation/input-mask-number";
 import { SubscriptionServices } from "../../services/SubscriptionServices";
 import { OfferServices } from "../../services/OfferServices";
+import { ContainerMain, ContainerForm, Title, Title2, Card, PagaIugu, User, Form, InputBox, Flex, Installments, SubmitBtn, Right, Right2, Emaill, CardOffer, CardOfferr, Line, ContainerText, ContainerDiscountPercentage, DiscountPercentage, ContainerInput, About} from "./styles";
 
 function Checkout() {
   const navigate = useNavigate();
@@ -77,16 +78,14 @@ function Checkout() {
   }, [offerSelected]);
 
   return (
-    <main>
-      <section id="home">
-        <div className="container">
-          <div className="left">
-            <div className="title">
-              <h1>Estamos quase lá!</h1>
-              <h2>Insira seus dados de pagamento abaixo:</h2>
-            </div>
+    <ContainerMain>
+        <ContainerForm>
+            
+              <Title>Estamos quase lá!</Title>
+              <Title2>Insira seus dados de pagamento abaixo:</Title2>
+           
 
-            <div className="card">
+              <Card>
               <div className="box1">
                 <img src={Mastercard} />
               </div>
@@ -107,17 +106,15 @@ function Checkout() {
                 <img src={Logo} />
               </div>
 
-              <div className="iugu">
+              <PagaIugu>
                 <h1>Pagamentos por</h1>
                 <img src={Iugu} />
-              </div>
-            </div>
+              </PagaIugu>
+           </Card>
 
-            <div className="label">
-              <form onSubmit={handleSubmitForm}>
-                <div className="row">
-                  <div className="col">
-                    <div className="inputBox">
+           <User>
+              <Form onSubmit={handleSubmitForm}>
+                    <InputBox>
                       <span>Número do cartão</span>
                       <input
                         type="text"
@@ -130,10 +127,10 @@ function Checkout() {
                         onChange={onChange}
                       ></input>
                       <h1></h1>
-                    </div>
+                    </InputBox>
 
-                    <div className="flex">
-                      <div className="inputBox">
+                    <Flex>
+                      <InputBox>
                         <span>Validade</span>
                         <input
                           type="text"
@@ -146,9 +143,9 @@ function Checkout() {
                           onChange={onChange}
                         ></input>
                         <h1></h1>
-                      </div>
+                        </InputBox>
 
-                      <div className="inputBox">
+                      <InputBox>
                         <span>CVV</span>
                         <input
                           type="text"
@@ -161,10 +158,10 @@ function Checkout() {
                           onChange={onChange}
                         ></input>
                         <h1></h1>
-                      </div>
-                    </div>
+                      </InputBox>
+                    </Flex>
 
-                    <div className="inputBox">
+                    <InputBox>
                       <span>Nome impresso no cartão</span>
                       <input
                         type="text"
@@ -176,9 +173,9 @@ function Checkout() {
                         onChange={onChange}
                       ></input>
                       <h1></h1>
-                    </div>
+                    </InputBox>
 
-                    <div className="inputBox">
+                    <InputBox>
                       <span>CPF</span>
                       <input
                         type="text"
@@ -191,9 +188,9 @@ function Checkout() {
                         onChange={onChange}
                       ></input>
                       <h1></h1>
-                    </div>
+                    </InputBox>
 
-                    <div className="inputBox">
+                    <InputBox>
                       <span>Cupom</span>
                       <input
                         type="text"
@@ -204,10 +201,10 @@ function Checkout() {
                         onChange={onChange}
                       ></input>
                       <h1></h1>
-                    </div>
+                    </InputBox>
 
                     {offerSelected?.splittable && (
-                      <div className="inputBox2">
+                      <Installments>
                         <span>Número de parcelas</span>
 
                         <select name="cars" id="cars" onChange={(event => setValues({...values, installments: event.target.value}))}>
@@ -225,33 +222,29 @@ function Checkout() {
                         </select>
 
                         <h1></h1>
-                      </div>
+                      </Installments>
                     )}
-                  </div>
-                </div>
 
-                <input
-                  type="submit"
-                  value="Finalizar pagamento"
-                  className="submit-btn"
-                ></input>
-              </form>
-            </div>
-          </div>
+                <SubmitBtn
+                  type="submit" 
+                >Finalizar pagamento</SubmitBtn>
+              </Form>
+            </User>
+         </ContainerForm>
 
-          <div className="right">
-            <div className="right2">
-              <div className="email">
+         <Right>
+            <Right2>   
+              <Emaill>  
                 <span>Confira o seu plano:</span>
                 <h2></h2>
                 <h3>fulano@cicrano.com.br</h3>
-              </div>
+              </Emaill>
 
-              <div className="card">
+              <CardOfferr>
                 {offers?.map((offer) => (
                   <div key={offer.id}>
-                    <div className="line1">
-                      <div className="containerText">
+                    <Line>
+                      <ContainerText>
                         <h1>{`${offer.title} | ${offer.description}`}</h1>
                         <p>{`De ${offer.fullPrice.toLocaleString("pt-BR", {
                           style: "currency",
@@ -262,12 +255,12 @@ function Checkout() {
                           style: "currency",
                           currency: "BRL",
                         })}`}</p>
-                        <div className="containerDiscountPercentage">
-                          <h3 className="discountPercentage">
+                        <ContainerDiscountPercentage>
+                          <DiscountPercentage>
                             {" "}
                             -{offer.discountPercentage * 100}%
-                          </h3>
-                        </div>
+                          </DiscountPercentage>
+                        </ContainerDiscountPercentage>
                         <h4>{`${offer.installments.toLocaleString("pt-BR", {
                           style: "currency",
                           currency: "BRL",
@@ -277,29 +270,27 @@ function Checkout() {
                           style: "currency",
                           currency: "BRL",
                         })}/mês`}</h4>
-                      </div>
-                      <div
+                      </ContainerText>
+                      <ContainerInput
                         className="containerInput"
                         onClick={() => setOfferSelected(offer)}
                       >
                         <input name="plan" type="radio" />
-                      </div>
-                    </div>
+                      </ContainerInput>
+                    </Line>
                     <br />
                   </div>
                 ))}
 
-                <div className="about">
+                <About>
                   <h1></h1>
                   <p>Sobre a cobrança</p>
                   <img src={Interrogation} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+                </About>
+              </CardOfferr>
+            </Right2>
+          </Right>
+      </ContainerMain>
   );
 }
 

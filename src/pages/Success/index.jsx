@@ -4,6 +4,7 @@ import './success.css'
 import Star from '../../assets/img/star.png';
 import True from '../../assets/img/true.png';
 import { useLocation } from 'react-router-dom';
+import { ContainerFooter, Center, Ellipse, TextSuccess, Card, Offer, Email, Cpf, Signature, InputHome} from './styles';
 
 function Success() {
 
@@ -15,51 +16,47 @@ function Success() {
 
 
   return (
-    <footer>     
-        <section id='header2'>
-            <div className='center'>
-                <div className='ellipse'>
+    <ContainerFooter>     
+            <Center>
+                <Ellipse>
                     <h2>
                          <img src={True}/>
                     </h2>
-                </div>
-    
-                <div className='success'>
+                </Ellipse>
+
+                <TextSuccess>
                     <h1>Parabéns!</h1>
                     <p>Sua assinatura foi  realizada com sucesso</p>
-                </div>
+                </TextSuccess>
 
 
-                <div className='cards'>
-    
-                    <div className='line'>
+                <Card>
+                    <Offer>
                         <h1>{location.state.offerSelected.title}</h1>
                         <p> {location.state.offerSelected.fullPrice.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} | {location.state.installments}x de {(location.state.offerSelected.fullPrice / location.state.installments).toLocaleString('pt-BR', {style:'currency', currency: 'BRL'})}</p>
                         <h2>
                             <img src={Star}/>
                         </h2>
-                    </div>
+                    </Offer>
     
-                    <div className='email'>
+                    <Email>
                         <span>E-mail</span>
                         <p>fulano@cicrano.com.br</p>
-                    </div>
+                    </Email>
     
-                    <div className='cpf'>
+                    <Cpf>
                         <span>CPF</span>
                         <p>{ location.state.cpf}</p>
-                    </div>
-    
-                </div>
+                    </Cpf>
+                </Card>
                 
-            <div className='signature'>
-                <p>Gerenciar assinatura</p>
-            </div>
+                <Signature>
+                    <p>Gerenciar assinatura</p>
+                </Signature>
     
-            <input type="submit" value="IR PARA HOME" className="submit-btn"></input>   
-            </div>  
-        </section>
-    </footer>
+                <InputHome type="submit" value="IR PARA HOME"></InputHome>   
+            </Center>
+    </ContainerFooter>
   );
 }
 
