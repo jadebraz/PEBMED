@@ -32,8 +32,8 @@ function Success() {
 
                 <Card>
                     <Offer>
-                        <h1>{location.state.offerSelected.title}</h1>
-                        <p> {location.state.offerSelected.fullPrice.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} | {location.state.installments}x de {(location.state.offerSelected.fullPrice / location.state.installments).toLocaleString('pt-BR', {style:'currency', currency: 'BRL'})}</p>
+                        <h1>{ location.state.offerSelected.title }</h1>
+                        <p> { location.state.offerSelected.fullPrice.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} | {location.state.installments}x de {(location.state.offerSelected.fullPrice / location.state.installments).toLocaleString('pt-BR', {style:'currency', currency: 'BRL'}) }</p>
                         <h2>
                             <img src={Star}/>
                         </h2>
@@ -46,7 +46,7 @@ function Success() {
     
                     <Cpf>
                         <span>CPF</span>
-                        <p>{ location.state.cpf}</p>
+                        <p>{ location.state.cpf }</p>
                     </Cpf>
                 </Card>
                 
@@ -54,7 +54,7 @@ function Success() {
                     <p>Gerenciar assinatura</p>
                 </Signature>
     
-                <InputHome type="submit" value="IR PARA HOME"></InputHome>   
+                <InputHome type="submit">IR PARA HOME</InputHome>   
             </Center>
     </ContainerFooter>
   );

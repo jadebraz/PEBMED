@@ -40,26 +40,20 @@ export const ContainerForm = styled.div`
         margin-top: -480px;
     }
     @media only screen and (max-width: 700px) {
-        width: 50%;
+        width: 600px;
         height: 100%;
         position: absolute;
-        margin-left: -480px;
-        margin-top: 500px;
+        margin-left: -150px;
+        margin-top: 400px;
     }
     
     @media only screen and (max-width: 450px) {
- 
-        width: 50%;
+        width: 450;
         height: 100%;
         position: absolute;
         margin-left: -120px;
         margin-top: 550px;
-    
- 
-}
-
-
-
+    }
 `
 export const Title = styled.text`
     position: absolute;
@@ -209,37 +203,41 @@ export const Right = styled.div`
         position: absolute;
         margin-left: 450px;
         margin-top: -530px;
-    
     }
     @media only screen and (max-width: 900px) {
         width: 30%;
         height: 90%;
         position: absolute;
         margin-left: 500px;
-        margin-top: -550px;
+        margin-top: -50px;
 }
-@media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 700px) {
         width: 50%;
         height: 100%;
         position: absolute;
-        left: -180px;
+        left: -230px;
         margin-top: 400px;
     }
-@media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 800px) {
         width: 50%;
         height: 50%;
         position: absolute;
         margin-left: 350px;
-        margin-top: -800px;
-    
-}
+        margin-top: -300px;   
+    }
 
+    /* @media only screen and (max-width: 450px) {
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        margin-left: 300px;
+        margin-top: -700px;   
+    } */
 `
 export const Right2 = styled.div`
     width: 330px;
     height: 100vh;
     display: flex;
-    /* align-items: center; */
 `
 export const Emaill = styled.div`
     box-sizing: border-box;
@@ -270,6 +268,22 @@ export const Emaill = styled.div`
     font-size: 11px;
     font-weight: 400;
     }
+    @media only screen and (max-width: 900px) {
+        width: 80%;
+        height: 50%;
+        position: absolute;
+        margin-top: -245px;
+    }
+    @media only screen and (max-width: 800px) {
+        width: 80%;
+        height: 30%;
+        position: absolute;
+        margin-top: -250px;   
+    }
+    @media only screen and (max-width: 450px) {
+        width: 100%;
+        margin-top: -200px;
+    }
 `
 export const CardOfferr = styled.div`
     position: absolute;
@@ -277,6 +291,15 @@ export const CardOfferr = styled.div`
     font-family: 'DM Sans', sans-serif;
     height: 230px;
     top: 218px;
+
+    @media only screen and (max-width: 900px) {
+        height: 90%;
+        position: absolute;
+        margin-top: -250px;
+    }
+    @media only screen and (max-width: 450px) {
+        margin-top:-200px;   
+    }
 `
 export const Line = styled.div`
     height: 100px; 

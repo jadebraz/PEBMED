@@ -11,6 +11,8 @@ It is a project that aims to organize customer information in a database called 
 
  - **Node.js**, allows data to be sent to the front end without requiring multiple connections that standardize the information and delay the execution of the request.
 
+ - **Styled-Components**, allows us to create style components when writing CSS code within a JavaScript file.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

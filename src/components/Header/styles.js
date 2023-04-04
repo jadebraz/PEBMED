@@ -11,6 +11,16 @@ export const Logo = styled.img`
     display: flex; 
     align-items: center;
     justify-content: center;
+
+    
+    @media only screen and (max-width: 450px) {
+        width: 36px;
+        height: 30px;
+        display: flex;
+        align-items:center;
+        margin-top: 0px;
+    }
+
 `
 export const IArrow = styled.img`
     position:absolute;
@@ -18,4 +28,5 @@ export const IArrow = styled.img`
     height: 12px;
     left: 68px;
     margin-top:-9px;
+
 `

@@ -1,12 +1,18 @@
 import styled from 'styled-components';
 
 export const ContainerFooter = styled.footer`
-    /* background: red; */
     font-family: 'DM Sans', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 700px;
+
+    @media only screen and (max-width: 450px) {
+        width: 300px;
+        height: 30px;
+        position: absolute;
+        margin-left: 60px;
+    }
 `
 export const Center = styled.div`
     display: flex;
@@ -25,7 +31,11 @@ export const Ellipse = styled.div`
     h2{
     margin-top: 15px;
     margin-left: 18px;
-}
+    }
+
+    @media only screen and (max-width: 450px) {
+      margin-top: -55px;
+    }
 `
 export const TextSuccess = styled.div`
     width: 220px;
@@ -177,7 +187,7 @@ export const Signature = styled.div`
     letter-spacing: 0.05em; 
     color: #191847;
 `
-export const InputHome = styled.div`
+export const InputHome = styled.button`
     width: 310px;
     height: 50px;
     left: 615px;
