@@ -23,14 +23,12 @@ export const ContainerForm = styled.div`
         margin-left: -700px;
         margin-top: -540px;
     }
-  
     @media only screen and (max-width: 900px) {
         width: 50%;
         height: 90%;
         position: absolute;
         margin-left: -700px;
         margin-top: -550px;
-    
     }
     @media only screen and (max-width: 800px) {
         width: 50%;
@@ -46,7 +44,6 @@ export const ContainerForm = styled.div`
         margin-left: -150px;
         margin-top: 400px;
     }
-    
     @media only screen and (max-width: 450px) {
         width: 450;
         height: 100%;
@@ -68,7 +65,7 @@ export const Title = styled.text`
     letter-spacing: -0.02em;
     color: #151516;
 `
-export const Title2 = styled.text`
+export const Subtitle = styled.text`
     position: absolute;
     width: 311px;
     height: 21px;
@@ -82,7 +79,7 @@ export const Title2 = styled.text`
     color: #151516;
 `
 
-export const Card = styled.div`
+export const ContainerCard = styled.div`
     display: flex;
     justify-content: space-between;
     position: absolute;
@@ -91,24 +88,26 @@ export const Card = styled.div`
     left: 300px;
     top: 218px;
 `
-export const PagaIugu = styled.div`
-    h1{
+export const ContainerIugu = styled.div`
     width: 100px;
     position: absolute;
     left: 20%;
     top: 70%;
-    font-size: 10px;
-    color: #E1DEE8;
-    }
 
     img{
     width: 28px;
     position: absolute;
-    left: 58%;
-    top: 75%;
+    left: 80%;
+    top: 30%;
 }
 `
-export const User = styled.div`
+export const TitleIugu = styled.div`
+    font-size: 10px;
+    color: #E1DEE8;
+`
+
+
+export const ContainerUser = styled.div`
     position: absolute;
     left: 248px;
     top: 300px;
@@ -118,33 +117,40 @@ export const User = styled.div`
 export const Form = styled.form`
     width: 495px;
 `
-export const InputBox = styled.div`
+export const ContainerInput = styled.form`
     margin-bottom: 20px;
+`
 
-    span{
-    font-size: 13px;
-    color: #666173;
-    }
-
-    input{
+export const Input = styled.input`
     cursor: pointer;
     outline: none;
     font-style: normal;
     letter-spacing: -0.02em;
-    width: 100%;
+    width: 80%;
     border:  #a9a1bd;
     padding: 10px 0px;
+    /* background: red; */
+    margin-bottom: 5px;
     font-size: 13px;
     text-transform: uppercase;
-    }
+    transition: all 0.3s ease;
 
-    h1{
+    &:hover{
+    box-shadow: 0px 10px 20px #00000056;
+    font-weight: 400;
+    border-radius: 10px;
+    }
+`
+export const LineInput = styled.div`
     border: 1px solid #F4F3F6;
     width: 80%;
     margin-bottom: 30px;
-    }
 `
-export const Flex = styled.div`
+export const Name = styled.form`
+    font-size: 13px;
+    color: #666173;
+`
+export const ContainerFlex = styled.div`
     display: flex;
     gap: 02px;
     margin-bottom: -20px;
@@ -157,16 +163,10 @@ export const Installments = styled.div`
     display: flex;
     border: none;
     margin-top: 13px;
-    width: 90%;
+    width: 80%;
     margin-bottom: 17px;
     cursor: pointer;
     outline: none;
-    }
-
-    h1{
-    border: 1px solid #F4F3F6;
-    width: 90%;
-    margin-bottom: 30px;
     }
 `
 export const SubmitBtn = styled.button`
@@ -190,7 +190,7 @@ export const SubmitBtn = styled.button`
     font-weight: 400;
 }
 `
-export const Right = styled.div`
+export const Plan = styled.div`
     width: 60%;
     height: 100%;
     display: flex;
@@ -210,7 +210,7 @@ export const Right = styled.div`
         position: absolute;
         margin-left: 500px;
         margin-top: -50px;
-}
+    }
     @media only screen and (max-width: 700px) {
         width: 50%;
         height: 100%;
@@ -234,10 +234,10 @@ export const Right = styled.div`
         margin-top: -700px;   
     } */
 `
-export const Right2 = styled.div`
+export const Premium = styled.div`
     width: 330px;
-    height: 100vh;
     display: flex;
+    margin-top:-600px;
 `
 export const Emaill = styled.div`
     box-sizing: border-box;
@@ -366,7 +366,7 @@ export const DiscountPercentage= styled.div`
     color: #FFFFFF;
     font-weight: 400;
 `
-export const ContainerInput = styled.div`
+export const ContantInput = styled.div`
     input {
     width: 15px;
     height: 15px;

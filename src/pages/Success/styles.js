@@ -20,7 +20,7 @@ export const Center = styled.div`
     align-items: center;
     margin-top: 90px;
 `
-export const Ellipse = styled.div`
+export const ContainerEllipse = styled.div`
     position: absolute;
     width: 60px;
     height: 60px;
@@ -28,22 +28,21 @@ export const Ellipse = styled.div`
     border-radius: 50px;
     border: 2px solid #F4F3F6;
 
-    h2{
-    margin-top: 15px;
-    margin-left: 18px;
-    }
-
     @media only screen and (max-width: 450px) {
       margin-top: -55px;
     }
 `
-export const TextSuccess = styled.div`
+export const Ellipse = styled.div`
+    margin-top: 15px;
+    margin-left: 18px;
+`
+export const ContainerText = styled.div`
     width: 220px;
     height: 100px;
     margin-top: -15px;
     margin-bottom: 18px;
-
-    h1{
+`
+export const TitleText = styled.div`
     margin-left: 65px;
     font-family: 'Google Sans' sans-serif;
     font-style: normal;
@@ -51,9 +50,8 @@ export const TextSuccess = styled.div`
     font-size: 20px;
     line-height: 25px;
     color: #191847;
-}
-
-    p{
+`
+export const SubtitleText = styled.div`
     font-family: 'Google Sans' sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -63,16 +61,15 @@ export const TextSuccess = styled.div`
     color: #C9C5D4;
     margin-left: -10px;
     margin-top: 11px;
-}
 `
-export const Card = styled.div`
+export const ContainerCard = styled.div`
     width: 343px;
     height: 200px;
     background: #FFFFFF;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     border-radius: 15px;
 `
-export const Offer = styled.div`
+export const ContainerOffer = styled.div`
     border: 1px solid rgb(241, 241, 241);
     width: 310px;
     height: 80px;
@@ -87,8 +84,8 @@ export const Offer = styled.div`
     background: #e4e4e9;
     font-weight: 400;
     }
-
-    h1{
+`
+export const TitleOffer = styled.div`
     font-family: 'Google Sans', sans-serif;
     margin-top: 15px;
     margin-right: 16px;
@@ -101,9 +98,8 @@ export const Offer = styled.div`
     line-height: 20px;
     text-align: right;
     color: #191847;
-    }
-
-    p{
+`
+export const InstallmentsOffer = styled.div`
     font-family: 'Google Sans', sans-serif;
     margin-top: 10px;
     margin-right: 14px;
@@ -113,26 +109,24 @@ export const Offer = styled.div`
     line-height: 18px;
     text-align: right;
     color: #191847;
-    }
-    
-    h2{
+`
+export const ContainerStar = styled.div`
     width: 40px;
     height: 40px;
     margin-left: 25px;
     margin-top: -40px;
     background: #E1DEE8;
     border-radius: 50px;
-    }
-
-    img{
+`
+export const ImgStart = styled.img`
     margin-left: 12px;
     margin-top: 11px;
-    }
 `
-export const Email = styled.div`
-    margin-top: 23px;
 
-    span{
+export const ContainerEmail = styled.div`
+    margin-top: 23px;
+`
+export const NameEmail = styled.div`
     font-family: sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -140,9 +134,8 @@ export const Email = styled.div`
     line-height: 18px;
     color: #C9C5D4;
     margin-left: 22px;
-    }
-
-    p{
+`
+export const Email = styled.div`
     width: 160px;
     margin-left: 170px;
     font-family: sans-serif;
@@ -151,13 +144,12 @@ export const Email = styled.div`
     font-size: 14px;
     color: #151516;
     margin-top: -19px;
-    }
 `
-export const Cpf = styled.div`
+export const ContainerCpf = styled.div`
     font-family:  sans-serif;
     margin-top: 20px;
-
-    span{
+`
+export const NameCpf = styled.div`
     font-family: sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -165,9 +157,8 @@ export const Cpf = styled.div`
     line-height: 18px;
     color: #C9C5D4;
     margin-left: 24px;
-    }
-
-    p{
+`
+export const Cpf = styled.div`
     width: 120px;
     margin-left: 169px;
     font-family: sans-serif;
@@ -176,12 +167,13 @@ export const Cpf = styled.div`
     font-size: 14px;
     color: #151516;
     margin-top: -16px;
-    }
 `
-export const Signature = styled.div`
+export const ContainerSubscription = styled.div`
     width: 152px;
     left: 705px;
     margin-top: 40px;
+`
+export const Subscription = styled.div`
     font-weight: 700;
     font-size: 12px; 
     letter-spacing: 0.05em; 
