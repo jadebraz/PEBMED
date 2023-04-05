@@ -5,14 +5,17 @@ export const Container = styled.header `
     align-items: center;
     justify-content: center;
     margin-top: 31px;
+
+    @media only screen and (max-width: 450px) {
+     width: 135vw;
+    }
 `
 export const Logo = styled.img`
-    margin-top:;
+
     display: flex; 
     align-items: center;
     justify-content: center;
 
-    
     @media only screen and (max-width: 450px) {
         width: 36px;
         height: 30px;
@@ -20,7 +23,6 @@ export const Logo = styled.img`
         align-items:center;
         margin-top: 0px;
     }
-
 `
 export const IArrow = styled.img`
     position:absolute;

@@ -33,7 +33,7 @@ export const ContainerEllipse = styled.div`
     }
 `
 export const Ellipse = styled.div`
-    margin-top: 15px;
+    margin-top: 19px;
     margin-left: 18px;
 `
 export const ContainerText = styled.div`
@@ -81,8 +81,10 @@ export const ContainerOffer = styled.div`
 
     &:hover{
     transform: scale(1.01);
-    background: #e4e4e9;
+    background: white;
     font-weight: 400;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 0px 10px 10px #00000056;
     }
 `
 export const TitleOffer = styled.div`
@@ -122,7 +124,6 @@ export const ImgStart = styled.img`
     margin-left: 12px;
     margin-top: 11px;
 `
-
 export const ContainerEmail = styled.div`
     margin-top: 23px;
 `
@@ -192,10 +193,11 @@ export const InputHome = styled.button`
     transition: all 0.3s ease;
 
     &:hover{
-    transform: scale(1.01);
-    background: #1f1d69;
+     transform: scale(1.01);
+    background: white;
+    color: #191847;
     font-weight: 400;
-}
+    }
 `
 
 

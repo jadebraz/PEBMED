@@ -5,9 +5,12 @@ export const ContainerMain = styled.main`
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    width: 100%;
     height: 820px;
     margin-top: 90px;
+
+    @media only screen and (max-width: 800px) {
+      width: 330px;
+    }
 `
 export const ContainerForm = styled.div`
     width: 50%;
@@ -33,7 +36,8 @@ export const ContainerForm = styled.div`
     @media only screen and (max-width: 800px) {
         width: 50%;
         height: 100%;
-        position: absolute;
+        display: flex;
+        align-items: center;
         margin-left: -800px;
         margin-top: -480px;
     }
@@ -64,6 +68,10 @@ export const Title = styled.text`
     line-height: 26px;
     letter-spacing: -0.02em;
     color: #151516;
+
+    @media only screen and (max-width: 450px) {
+    font-size: 25px;
+    }
 `
 export const Subtitle = styled.text`
     position: absolute;
@@ -78,7 +86,6 @@ export const Subtitle = styled.text`
     letter-spacing: -0.02em;
     color: #151516;
 `
-
 export const ContainerCard = styled.div`
     display: flex;
     justify-content: space-between;
@@ -129,30 +136,35 @@ export const Input = styled.input`
     width: 80%;
     border:  #a9a1bd;
     padding: 10px 0px;
-    /* background: red; */
     margin-bottom: 5px;
     font-size: 13px;
     text-transform: uppercase;
-    transition: all 0.3s ease;
 
-    &:hover{
-    box-shadow: 0px 10px 20px #00000056;
-    font-weight: 400;
-    border-radius: 10px;
+    @media only screen and (max-width: 450px) {
+        font-size: 19px;
     }
 `
 export const LineInput = styled.div`
     border: 1px solid #F4F3F6;
     width: 80%;
     margin-bottom: 30px;
+
+    @media only screen and (max-width: 800px) {
+    width: 95%;
+    }
 `
 export const Name = styled.form`
     font-size: 13px;
     color: #666173;
+
+    
+    @media only screen and (max-width: 450px) {
+    font-size: 18px;
+    }
 `
 export const ContainerFlex = styled.div`
     display: flex;
-    gap: 02px;
+    gap: 30px;
     margin-bottom: -20px;
 `
 export const Installments = styled.div`
@@ -167,28 +179,15 @@ export const Installments = styled.div`
     margin-bottom: 17px;
     cursor: pointer;
     outline: none;
-    }
-`
-export const SubmitBtn = styled.button`
-    width: 80%;
-    font-size: 14px;
-    padding: 12px;
-    font-weight: 400;
-    border-radius: 25px;
-    background: #191847;
-    color: #ffffff;
-    height: 50px;
-    margin-top: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
 
-    &:hover{
-    transform: scale(1.01);
-    background: #1f1d69;
-    color: #ffffff;
-    font-weight: 400;
-}
+    @media only screen and (max-width: 800px) {
+        width: 95%;
+    }
+
+    @media only screen and (max-width: 450px) {
+        font-size: 19px;
+    }
+    }
 `
 export const Plan = styled.div`
     width: 60%;
@@ -220,9 +219,9 @@ export const Plan = styled.div`
     }
     @media only screen and (max-width: 800px) {
         width: 50%;
-        height: 50%;
+        height: 40%;
         position: absolute;
-        margin-left: 350px;
+        margin-left: 270px;
         margin-top: -300px;   
     }
 
@@ -239,35 +238,14 @@ export const Premium = styled.div`
     display: flex;
     margin-top:-600px;
 `
-export const Emaill = styled.div`
+export const ContainerEmailCheckout = styled.div`
     box-sizing: border-box;
     position: absolute;
     width: 200px;
     height: 50px;
-    font-size: 20px;
     top: 131px;
 
-    h2{
-    width: 150px;
-    height: 24px;
-    top: 160px;
-    font-size: 11px;
-    font-weight: 400;
-    margin-top: 6px;
-    outline: none;
-    border: 1px solid #F4F3F6;
-    border-radius: 12px;
-    color: #151516;
-    }
 
-    h3{
-    width: 120px;
-    height: 15px;
-    margin-top: -20px;
-    margin-left: 18.5px;
-    font-size: 11px;
-    font-weight: 400;
-    }
     @media only screen and (max-width: 900px) {
         width: 80%;
         height: 50%;
@@ -285,7 +263,32 @@ export const Emaill = styled.div`
         margin-top: -200px;
     }
 `
-export const CardOfferr = styled.div`
+export const EmailCheckout = styled.div`
+    width: 133px;
+    height: 15px;
+    margin-top: 5px;
+    font-size: 11px;
+    font-weight: 400;
+    border: 1px solid #F4F3F6;
+    border-radius:12px;
+    padding: 10px 10px;
+    display: flex;
+    align-items:center;
+
+    @media only screen and (max-width: 450px) {
+    font-size: 15px;
+    width: 180px;
+    }
+`
+export const NameEmailCheckout = styled.div`
+    font-size: 20px;
+
+    @media only screen and (max-width: 450px) {
+    font-size: 25px;
+    width: 300px;
+    }
+`
+export const ContainerCardOfferr = styled.div`
     position: absolute;
     width: 330px;
     font-family: 'DM Sans', sans-serif;
@@ -297,38 +300,47 @@ export const CardOfferr = styled.div`
         position: absolute;
         margin-top: -250px;
     }
+
+    @media only screen and (max-width: 800px) {
+        height: 90%;
+        width: 470px;
+        position: absolute;
+        margin-top: -250px;
+    }
     @media only screen and (max-width: 450px) {
         margin-top:-200px;   
     }
 `
-export const Line = styled.div`
+export const LineOffer = styled.div.attrs(props => ({
+    border: props.isSelected ? '1px solid #191847' : '1px solid #E1DEE8'
+}))`
     height: 100px; 
-    border: 1px solid #191847;
     border-radius: 15px;
     display: flex;
     position: relative;
+    cursor: pointer;
     transition: all 0.3s ease;
-
-    &:hover{
-    transform: scale(1.01);
-    background: #f5f5f7;
-    border: none;
-    }
+    border: ${props => props.isSelected ? '1px solid #191847' : '1px solid #E1DEE8'};
+    box-shadow: 0px 8px 10px #00000056;
 `
 export const ContainerText = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    h1{
+`
+export const OfferTitle = styled.div`
     margin:  0px 20px 0px;
     font-size: 14px;
     font-style: normal;
     line-height: 18px;
     width: 200px;
-    }
 
-    p{
+    @media only screen and (max-width: 450px) {
+        font-size: 17px;
+        width: 300px;
+    }
+`
+export const OfferFullPrice = styled.div`
     font-size: 12px;
     width: 200px;
     font-weight: 400;
@@ -336,9 +348,12 @@ export const ContainerText = styled.div`
     font-style: normal;
     color: #191847;
     line-height: 16px;
-    }
 
-    h4{
+    @media only screen and (max-width: 450px) {
+        font-size: 13px;
+    }
+`
+export const OfferInstallments = styled.div`
     font-size: 10px;
     width: 180px;
     font-weight: 400;
@@ -347,6 +362,9 @@ export const ContainerText = styled.div`
     font-style: normal;
     color: #F5850B;
     line-height: 13px;
+
+    @media only screen and (max-width: 450px) {
+        font-size: 11.5px;
     }
 `
 export const ContainerDiscountPercentage = styled.div`
@@ -360,6 +378,10 @@ export const ContainerDiscountPercentage = styled.div`
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+
+    @media only screen and (max-width: 800px) {
+        margin-left: 150px;
+    }
 `
 export const DiscountPercentage= styled.div`
     font-size: 10px;
@@ -379,7 +401,7 @@ export const ContantInput = styled.div`
     cursor: pointer;
     }
 `
-export const About = styled.div`
+export const ContainerAbout = styled.div`
     p{
     display: flex;
     align-items: center;
@@ -388,6 +410,10 @@ export const About = styled.div`
     color: #151516;
     margin-top: 10px;
     margin-left: -10px;
+
+    @media only screen and (max-width: 800px) {
+        margin-left: -40px;
+    }
     }
 
     img{
@@ -397,6 +423,10 @@ export const About = styled.div`
     margin-left: 210px;
     margin-top: -15px;
     cursor: pointer;
+
+    @media only screen and (max-width: 800px) {
+        margin-left: 270px;
+    }
 }
 `
 

@@ -1,4 +1,7 @@
 import "../../App.css";
+
+import Button from "../../components/Button";
+
 import React, { useEffect, useState } from "react";
 import { isValidFormValues } from "../../validation/isValidFormValues";
 import { useNavigate } from "react-router-dom";
@@ -31,17 +34,21 @@ import {
   LineInput,
   ContainerFlex,
   Installments,
-  SubmitBtn,
   Plan,
   Premium,
-  Emaill,
-  CardOfferr,
-  Line,
+  ContainerEmailCheckout,
+  NameEmailCheckout,
+  ContainerCardOfferr,
+  LineOffer,
   ContainerText,
   ContainerDiscountPercentage,
   DiscountPercentage,
   ContantInput,
-  About,
+  ContainerAbout,
+  EmailCheckout,
+  OfferTitle,
+  OfferFullPrice,
+  OfferInstallments,
 } from "./styles";
 
 function Checkout() {
@@ -93,6 +100,7 @@ function Checkout() {
       .getOffer()
       .then((response) => {
         setOffers(response.data);
+        setOfferSelected(response.data[0])
       })
       .catch((error) => {
         alert("Erro na busca dos planos.");
@@ -252,27 +260,25 @@ function Checkout() {
                 <LineInput></LineInput>
               </Installments>
             )}
-
-            <SubmitBtn type="submit">Finalizar pagamento</SubmitBtn>
+            <Button />
           </Form>
         </ContainerUser>
       </ContainerForm>
 
       <Plan>
         <Premium>
-          <Emaill>
-            <span>Confira o seu plano:</span>
-            <h2></h2>
-            <h3>fulano@cicrano.com.br</h3>
-          </Emaill>
+          <ContainerEmailCheckout>
+            <NameEmailCheckout>Confira o seu plano:</NameEmailCheckout>
+            <EmailCheckout>fulano@cicrano.com.br</EmailCheckout>
+          </ContainerEmailCheckout>
 
-          <CardOfferr>
+          <ContainerCardOfferr>
             {offers?.map((offer) => (
-              <div key={offer.id}>
-                <Line>
+              <div key={offer.id} onClick={() => setOfferSelected(offer)}>
+                <LineOffer isSelected={offer.id === offerSelected?.id}>
                   <ContainerText>
-                    <h1>{`${offer.title} | ${offer.description}`}</h1>
-                    <p>{`De ${offer.fullPrice.toLocaleString("pt-BR", {
+                    <OfferTitle>{`${offer.title} | ${offer.description}`}</OfferTitle>
+                    <OfferFullPrice>{`De ${offer.fullPrice.toLocaleString("pt-BR", {
                       style: "currency",
                       currency: "BRL",
                     })} | Por ${(
@@ -280,14 +286,14 @@ function Checkout() {
                     ).toLocaleString("pt-BR", {
                       style: "currency",
                       currency: "BRL",
-                    })}`}</p>
+                    })}`}</OfferFullPrice>
                     <ContainerDiscountPercentage>
                       <DiscountPercentage>
                         {" "}
                         -{offer.discountPercentage * 100}%
                       </DiscountPercentage>
                     </ContainerDiscountPercentage>
-                    <h4>{`${offer.installments.toLocaleString("pt-BR", {
+                    <OfferInstallments>{`${offer.installments.toLocaleString("pt-BR", {
                       style: "currency",
                       currency: "BRL",
                     })}x de ${(
@@ -295,25 +301,24 @@ function Checkout() {
                     ).toLocaleString("pt-BR", {
                       style: "currency",
                       currency: "BRL",
-                    })}/mês`}</h4>
+                    })}/mês`}</OfferInstallments>
                   </ContainerText>
                   <ContantInput
                     className="containerInput"
-                    onClick={() => setOfferSelected(offer)}
+                    
                   >
-                    <input name="plan" type="radio" />
+                    {/* <input name="plan" type="radio" /> */}
                   </ContantInput>
-                </Line>
+                </LineOffer>
                 <br />
               </div>
             ))}
 
-            <About>
-              <h1></h1>
+            <ContainerAbout>
               <p>Sobre a cobrança</p>
               <img src={Interrogation} />
-            </About>
-          </CardOfferr>
+            </ContainerAbout>
+          </ContainerCardOfferr>
         </Premium>
       </Plan>
     </ContainerMain>
