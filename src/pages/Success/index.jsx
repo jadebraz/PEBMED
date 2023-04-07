@@ -27,7 +27,6 @@ import {
   Cpf,
   ContainerSubscription,
   Subscription,
-  InputHome,
 } from "./styles";
 import { Installments } from "../Checkout/styles";
 import { SubmitButton } from "../../components/Button/styles";

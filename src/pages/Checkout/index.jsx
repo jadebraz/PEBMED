@@ -1,6 +1,7 @@
 import "../../App.css";
 
 import Button from "../../components/Button";
+import Input from "../../components/Input";
 
 import React, { useEffect, useState } from "react";
 
@@ -35,7 +36,7 @@ import {
   Form,
   ContainerInput,
   Name,
-  Input,
+  InputValue,
   LineInput,
   ContainerFlex,
   Installments,
@@ -105,7 +106,7 @@ function Checkout() {
       .getOffer()
       .then((response) => {
         setOffers(response.data);
-        setOfferSelected(response.data[0])
+        setOfferSelected(response.data[0]);
       })
       .catch((error) => {
         alert("Erro na busca dos planos.");
@@ -151,94 +152,76 @@ function Checkout() {
 
         <ContainerUser>
           <Form onSubmit={handleSubmitForm}>
-            <ContainerInput>
-              <Name>Número do cartão</Name>
-              <Input
-                type="text"
-                placeholder="0000 0000 0000 0000"
-                value={values?.nCartao || ""}
-                maxLength="19"
-                required
-                name="nCartao"
-                autoComplete="off"
-                onChange={onChange}
-              ></Input>
-              <LineInput></LineInput>
-            </ContainerInput>
+            <Input
+              label="Número do Cartão"
+              type="text"
+              placeholder="0000 0000 0000 0000"
+              value={values?.nCartao || ""}
+              maxLength="19"
+              required
+              name="nCartao"
+              autoComplete="off"
+              onChange={onChange}
+            />
 
             <ContainerFlex>
-              <ContainerInput>
-                <Name>Validade</Name>
-                <Input
-                  type="text"
-                  placeholder="MM/AA"
-                  maxLength="7"
-                  value={values?.expirationDate || ""}
-                  name="expirationDate"
-                  autoComplete="off"
-                  required
-                  onChange={onChange}
-                ></Input>
-                <LineInput></LineInput>
-              </ContainerInput>
+              <Input
+                label="Validade"
+                type="text"
+                placeholder="MM/AA"
+                maxLength="7"
+                value={values?.expirationDate || ""}
+                name="expirationDate"
+                autoComplete="off"
+                required
+                onChange={onChange}
+              />
 
-              <ContainerInput>
-                <Name>CVV</Name>
-                <Input
-                  type="text"
-                  placeholder="000"
-                  maxLength="3"
-                  name="cvv"
-                  autoComplete="off"
-                  value={values?.cvv || ""}
-                  required
-                  onChange={onChange}
-                ></Input>
-                <LineInput></LineInput>
-              </ContainerInput>
+              <Input
+                label="CVV"
+                type="text"
+                placeholder="000"
+                maxLength="3"
+                name="cvv"
+                autoComplete="off"
+                value={values?.cvv || ""}
+                required
+                onChange={onChange}
+              />
             </ContainerFlex>
 
-            <ContainerInput>
-              <Name>Nome impresso no cartão</Name>
-              <Input
-                type="text"
-                placeholder="Seu nome"
-                maxLength="25"
-                name="nome"
-                required
-                autoComplete="off"
-                onChange={onChange}
-              ></Input>
-              <LineInput></LineInput>
-            </ContainerInput>
+            <Input
+              label="Nome impresso no cartão"
+              type="text"
+              placeholder="Seu nome"
+              maxLength="25"
+              name="nome"
+              required
+              autoComplete="off"
+              onChange={onChange}
+            />
 
-            <ContainerInput>
-              <Name>CPF</Name>
-              <Input
-                type="text"
-                placeholder="000.000.000-00"
-                value={values?.cpf || ""}
-                maxLength="14"
-                name="cpf"
-                autoComplete="off"
-                required
-                onChange={onChange}
-              ></Input>
-              <LineInput></LineInput>
-            </ContainerInput>
+            <Input
+              label="CPF"
+              type="text"
+              placeholder="000.000.000-00"
+              value={values?.cpf || ""}
+              maxLength="14"
+              name="cpf"
+              autoComplete="off"
+              required
+              onChange={onChange}
+            />
 
-            <ContainerInput>
-              <Name>Cupom</Name>
-              <Input
-                type="text"
-                placeholder="Insira  aqui"
-                maxLength="10"
-                name="cupom"
-                autoComplete="off"
-                onChange={onChange}
-              ></Input>
-              <LineInput></LineInput>
-            </ContainerInput>
+            <Input
+              label="Cupom"
+              type="text"
+              placeholder="Insira  aqui"
+              maxLength="10"
+              name="cupom"
+              autoComplete="off"
+              onChange={onChange}
+            />
 
             {offerSelected?.splittable && (
               <Installments>
@@ -283,10 +266,13 @@ function Checkout() {
                 <LineOffer isSelected={offer.id === offerSelected?.id}>
                   <ContainerText>
                     <OfferTitle>{`${offer.title} | ${offer.description}`}</OfferTitle>
-                    <OfferFullPrice>{`De ${offer.fullPrice.toLocaleString("pt-BR", {
-                      style: "currency",
-                      currency: "BRL",
-                    })} | Por ${(
+                    <OfferFullPrice>{`De ${offer.fullPrice.toLocaleString(
+                      "pt-BR",
+                      {
+                        style: "currency",
+                        currency: "BRL",
+                      }
+                    )} | Por ${(
                       offer.fullPrice - offer.discountAmmount
                     ).toLocaleString("pt-BR", {
                       style: "currency",
@@ -298,21 +284,20 @@ function Checkout() {
                         -{offer.discountPercentage * 100}%
                       </DiscountPercentage>
                     </ContainerDiscountPercentage>
-                    <OfferInstallments>{`${offer.installments.toLocaleString("pt-BR", {
-                      style: "currency",
-                      currency: "BRL",
-                    })}x de ${(
+                    <OfferInstallments>{`${offer.installments.toLocaleString(
+                      "pt-BR",
+                      {
+                        style: "currency",
+                        currency: "BRL",
+                      }
+                    )}x de ${(
                       offer.fullPrice / offer.installments
                     ).toLocaleString("pt-BR", {
                       style: "currency",
                       currency: "BRL",
                     })}/mês`}</OfferInstallments>
                   </ContainerText>
-                  <ContantInput
-                    className="containerInput"
-                    
-                  >
-                  </ContantInput>
+                  <ContantInput className="containerInput"></ContantInput>
                 </LineOffer>
                 <br />
               </div>

@@ -18,6 +18,7 @@ export const SubmitButton = styled.button`
     background: white;
     color: #191847;
     font-weight: 400;
+    box-shadow: 0px 8px 15px #00000056;
     }
 
     @media only screen and (max-width: 800px) {

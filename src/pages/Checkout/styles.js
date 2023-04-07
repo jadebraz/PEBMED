@@ -38,7 +38,7 @@ export const ContainerForm = styled.div`
         justify-content:center;
         align-items:center;
         margin-left: 180px;
-        margin-top: 850px;
+        margin-top: 900px;
     }
     @media only screen and (max-width: 700px) {
         width: 600px;
@@ -160,7 +160,7 @@ export const Form = styled.form`
 export const ContainerInput = styled.form`
     margin-bottom: 20px;
 `
-export const Input = styled.input`
+export const InputValue = styled.input`
     cursor: pointer;
     outline: none;
     font-style: normal;
