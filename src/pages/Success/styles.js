@@ -180,25 +180,7 @@ export const Subscription = styled.div`
     letter-spacing: 0.05em; 
     color: #191847;
 `
-export const InputHome = styled.button`
-    width: 310px;
-    height: 50px;
-    left: 615px;
-    font-size: 12px;
-    margin-top: 25px;
-    background: #191847;
-    color: white;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
 
-    &:hover{
-     transform: scale(1.01);
-    background: white;
-    color: #191847;
-    font-weight: 400;
-    }
-`
 
 
 

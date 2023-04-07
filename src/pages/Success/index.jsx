@@ -2,7 +2,9 @@ import "../../App.css";
 import React, { useEffect } from "react";
 import Star from "../../assets/img/star.png";
 import True from "../../assets/img/true.png";
+
 import { useLocation } from "react-router-dom";
+
 import {
   ContainerFooter,
   Center,
@@ -28,6 +30,7 @@ import {
   InputHome,
 } from "./styles";
 import { Installments } from "../Checkout/styles";
+import { SubmitButton } from "../../components/Button/styles";
 
 function Success() {
   const location = useLocation();
@@ -85,7 +88,7 @@ function Success() {
           <Subscription>Gerenciar assinatura</Subscription>
         </ContainerSubscription>
 
-        <InputHome type="submit">IR PARA HOME</InputHome>
+        <SubmitButton type="submit">IR PARA HOME</SubmitButton>
       </Center>
     </ContainerFooter>
   );

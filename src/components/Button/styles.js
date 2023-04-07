@@ -9,7 +9,7 @@ export const SubmitButton = styled.button`
     background: #191847;
     color: #ffffff;
     height: 50px;
-    margin-top: 5px;
+    margin-top: 15px;
     cursor: pointer;
     transition: all 0.0s ease;
 

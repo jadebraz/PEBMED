@@ -3,8 +3,9 @@ import "../../App.css";
 import Button from "../../components/Button";
 
 import React, { useEffect, useState } from "react";
-import { isValidFormValues } from "../../validation/isValidFormValues";
+
 import { useNavigate } from "react-router-dom";
+
 import Mastercard from "../../assets/img/mastercard.png";
 import Cinza from "../../assets/img/cinza.png";
 import American from "../../assets/img/american.png";
@@ -12,12 +13,16 @@ import Logo from "../../assets/img/elo.png";
 import Visa from "../../assets/img/visa.png";
 import Iugu from "../../assets/img/iugu.png";
 import Interrogation from "../../assets/img/interrogation.png";
+
 import { inputcpfmask } from "../../validation/input-mask-cpf";
 import { inputmaskcardnumber } from "../../validation/input-mask-card-number";
 import { inputmaskexpirationdate } from "../../validation/input-mask-expiration-date";
 import { inputmasknumber } from "../../validation/input-mask-number";
+
 import { SubscriptionServices } from "../../services/SubscriptionServices";
 import { OfferServices } from "../../services/OfferServices";
+import { isValidFormValues } from "../../validation/isValidFormValues";
+
 import {
   ContainerMain,
   ContainerForm,
@@ -307,7 +312,6 @@ function Checkout() {
                     className="containerInput"
                     
                   >
-                    {/* <input name="plan" type="radio" /> */}
                   </ContantInput>
                 </LineOffer>
                 <br />

@@ -18,48 +18,50 @@ export const ContainerForm = styled.div`
     display: flex;
     justify-content: center;
 
-
     @media only screen and (max-width: 1133px) {
-        width: 50%;
-        height: 90%;
+        width: 70%;
+        height: 900px;
         position: absolute;
         margin-left: -700px;
-        margin-top: -540px;
+        margin-top: 30px;
     }
     @media only screen and (max-width: 900px) {
         width: 50%;
-        height: 90%;
+        height: 900px;
         position: absolute;
-        margin-left: -700px;
-        margin-top: -550px;
+        margin-top: 30px;
     }
     @media only screen and (max-width: 800px) {
-        width: 50%;
+        width: 100%;
         height: 100%;
         display: flex;
-        align-items: center;
-        margin-left: -800px;
-        margin-top: -480px;
+        justify-content:center;
+        align-items:center;
+        margin-left: 180px;
+        margin-top: 850px;
     }
     @media only screen and (max-width: 700px) {
         width: 600px;
         height: 100%;
         position: absolute;
-        margin-left: -150px;
-        margin-top: 400px;
+        margin-left: 0px;
+        margin-top: 880px;
+    }
+    @media only screen and (max-width: 550px) {
+        margin-left:-70px;
     }
     @media only screen and (max-width: 450px) {
         width: 450;
         height: 100%;
         position: absolute;
         margin-left: -120px;
-        margin-top: 550px;
+        margin-top: 850px;
     }
 `
 export const Title = styled.text`
     position: absolute;
     width: 497px;
-    height: 100vh;
+    height: 90%;
     left: 248px;
     top: 132px;
     font-style: normal;
@@ -70,7 +72,16 @@ export const Title = styled.text`
     color: #151516;
 
     @media only screen and (max-width: 450px) {
-    font-size: 25px;
+        font-size: 25px;
+    }
+    @media only screen and (max-width: 800px) {
+        font-size: 24px;
+    }
+    @media only screen and (max-width: 900px) {
+        top: 0px;
+    }
+    @media only screen and (max-width: 1133px) {
+        top: 0px;
     }
 `
 export const Subtitle = styled.text`
@@ -85,6 +96,16 @@ export const Subtitle = styled.text`
     line-height: 21px;
     letter-spacing: -0.02em;
     color: #151516;
+
+    @media only screen and (max-width: 1133px) {
+        top:30px;
+    }
+    @media only screen and (max-width: 800px) {
+        font-size: 16px;
+    }
+    @media only screen and (max-width: 900px) {
+        top: 30px;
+    }
 `
 export const ContainerCard = styled.div`
     display: flex;
@@ -94,6 +115,13 @@ export const ContainerCard = styled.div`
     height: 50px;
     left: 300px;
     top: 218px;
+
+    @media only screen and (max-width: 1133px) {
+        top:80px;
+    }
+    @media only screen and (max-width: 900px) {
+        top: 80px;
+    }
 `
 export const ContainerIugu = styled.div`
     width: 100px;
@@ -112,13 +140,18 @@ export const TitleIugu = styled.div`
     font-size: 10px;
     color: #E1DEE8;
 `
-
-
 export const ContainerUser = styled.div`
     position: absolute;
     left: 248px;
     top: 300px;
     font-size: 12px;
+
+    @media only screen and (max-width: 1133px) {
+        top:170px;
+    }
+    @media only screen and (max-width: 900px) {
+        top: 170px;
+    }
 `
 
 export const Form = styled.form`
@@ -127,7 +160,6 @@ export const Form = styled.form`
 export const ContainerInput = styled.form`
     margin-bottom: 20px;
 `
-
 export const Input = styled.input`
     cursor: pointer;
     outline: none;
@@ -157,7 +189,6 @@ export const Name = styled.form`
     font-size: 13px;
     color: #666173;
 
-    
     @media only screen and (max-width: 450px) {
     font-size: 18px;
     }
@@ -183,7 +214,6 @@ export const Installments = styled.div`
     @media only screen and (max-width: 800px) {
         width: 95%;
     }
-
     @media only screen and (max-width: 450px) {
         font-size: 19px;
     }
@@ -194,49 +224,39 @@ export const Plan = styled.div`
     height: 100%;
     display: flex;
     justify-content: end;
-
+    margin-top: 30px;
 
     @media only screen and (max-width: 1133px) {
-        width: 40%;
-        height: 90%;
-        position: absolute;
+        width: 50%;
+        height: 900px;
+        display: flex;
+        justify-content:center;
         margin-left: 450px;
-        margin-top: -530px;
     }
     @media only screen and (max-width: 900px) {
-        width: 30%;
-        height: 90%;
-        position: absolute;
-        margin-left: 500px;
-        margin-top: -50px;
+        width: 40%;
+        height: 900px;
+        display: flex;
+        justify-content: center;
     }
     @media only screen and (max-width: 700px) {
         width: 50%;
         height: 100%;
         position: absolute;
-        left: -230px;
-        margin-top: 400px;
+        left: -340px;
+        margin-top: 450px;
     }
     @media only screen and (max-width: 800px) {
-        width: 50%;
-        height: 40%;
-        position: absolute;
-        margin-left: 270px;
-        margin-top: -300px;   
-    }
-
-    /* @media only screen and (max-width: 450px) {
-        width: 50%;
+        width: 70%;
         height: 50%;
         position: absolute;
-        margin-left: 300px;
-        margin-top: -700px;   
-    } */
+        margin-top: -400px;   
+    }
 `
 export const Premium = styled.div`
     width: 330px;
+    height: 900px;
     display: flex;
-    margin-top:-600px;
 `
 export const ContainerEmailCheckout = styled.div`
     box-sizing: border-box;
@@ -245,22 +265,24 @@ export const ContainerEmailCheckout = styled.div`
     height: 50px;
     top: 131px;
 
-
     @media only screen and (max-width: 900px) {
-        width: 80%;
-        height: 50%;
+        width: 30%;
+        height: 60%;
         position: absolute;
-        margin-top: -245px;
     }
     @media only screen and (max-width: 800px) {
-        width: 80%;
-        height: 30%;
-        position: absolute;
-        margin-top: -250px;   
+        width: 60%;
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        margin-top: -130px;   
+    }
+    @media only screen and (max-width: 550px) {
+        width: 300px;
     }
     @media only screen and (max-width: 450px) {
         width: 100%;
-        margin-top: -200px;
     }
 `
 export const EmailCheckout = styled.div`
@@ -275,6 +297,10 @@ export const EmailCheckout = styled.div`
     display: flex;
     align-items:center;
 
+    @media only screen and (max-width: 800px) {
+    font-size: 15px;
+    width: 180px;
+    }
     @media only screen and (max-width: 450px) {
     font-size: 15px;
     width: 180px;
@@ -283,9 +309,11 @@ export const EmailCheckout = styled.div`
 export const NameEmailCheckout = styled.div`
     font-size: 20px;
 
+    @media only screen and (max-width: 800px) {
+    font-size: 25px;
+    }
     @media only screen and (max-width: 450px) {
     font-size: 25px;
-    width: 300px;
     }
 `
 export const ContainerCardOfferr = styled.div`
@@ -296,19 +324,18 @@ export const ContainerCardOfferr = styled.div`
     top: 218px;
 
     @media only screen and (max-width: 900px) {
-        height: 90%;
+        height: 80%;
         position: absolute;
-        margin-top: -250px;
+        margin-top: 0px;
     }
-
     @media only screen and (max-width: 800px) {
-        height: 90%;
+        height: 300px;
         width: 470px;
-        position: absolute;
-        margin-top: -250px;
-    }
-    @media only screen and (max-width: 450px) {
-        margin-top:-200px;   
+        display: flex;
+        flex-direction: column;
+        justify-content:end;
+        margin-top: -150px;
+        margin-left: -70px;
     }
 `
 export const LineOffer = styled.div.attrs(props => ({
