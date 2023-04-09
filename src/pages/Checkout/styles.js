@@ -58,7 +58,7 @@ export const ContainerForm = styled.div`
         margin-top: 850px;
     }
 `
-export const Title = styled.text`
+export const Title = styled.p`
     position: absolute;
     width: 497px;
     height: 90%;
@@ -84,7 +84,7 @@ export const Title = styled.text`
         top: 0px;
     }
 `
-export const Subtitle = styled.text`
+export const Subtitle = styled.p`
     position: absolute;
     width: 311px;
     height: 21px;
@@ -157,7 +157,7 @@ export const ContainerUser = styled.div`
 export const Form = styled.form`
     width: 495px;
 `
-export const ContainerInput = styled.form`
+export const ContainerInput = styled.div`
     margin-bottom: 20px;
 `
 export const InputValue = styled.input`
@@ -185,7 +185,7 @@ export const LineInput = styled.div`
     width: 95%;
     }
 `
-export const Name = styled.form`
+export const Name = styled.p`
     font-size: 13px;
     color: #666173;
 
@@ -447,7 +447,7 @@ export const ContainerAbout = styled.div`
     display: flex;
     flex-direction: column;
     width: 15px;
-    margin-left: 210px;
+    margin-left: 220px;
     margin-top: -15px;
     cursor: pointer;
 

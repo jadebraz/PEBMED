@@ -11,7 +11,6 @@ export const Container = styled.header `
     }
 `
 export const Logo = styled.img`
-
     display: flex; 
     align-items: center;
     justify-content: center;

@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
-
-export const ContainerInput = styled.form`
+export const ContainerInput = styled.div`
     margin-bottom: 20px;
 `
 export const InputValue = styled.input`
     cursor: pointer;
     outline: none;
     font-style: normal;
-    /* background: red; */
     letter-spacing: -0.02em;
     width: 80%;
     border:  #a9a1bd;
@@ -30,7 +28,7 @@ export const LineInput = styled.div`
     width: 95%;
     }
 `
-export const Name = styled.form`
+export const Name = styled.p`
     font-size: 13px;
     color: #666173;
 

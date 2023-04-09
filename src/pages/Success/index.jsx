@@ -1,9 +1,12 @@
 import "../../App.css";
 import React, { useEffect } from "react";
+
 import Star from "../../assets/img/star.png";
 import True from "../../assets/img/true.png";
 
 import { useLocation } from "react-router-dom";
+
+import { SubmitButton } from "../../components/Button/styles";
 
 import {
   ContainerFooter,
@@ -28,15 +31,9 @@ import {
   ContainerSubscription,
   Subscription,
 } from "./styles";
-import { Installments } from "../Checkout/styles";
-import { SubmitButton } from "../../components/Button/styles";
 
 function Success() {
   const location = useLocation();
-
-  useEffect(() => {
-    console.log(location);
-  }, []);
 
   return (
     <ContainerFooter>
@@ -59,6 +56,7 @@ function Success() {
               {" "}
               {location.state.offerSelected.fullPrice.toLocaleString("pt-BR", {
                 style: "currency",
+
                 currency: "BRL",
               })}{" "}
               | {location.state.installments}x de{" "}

@@ -45,12 +45,7 @@ const isValidExpirationDate = (expirationDate) => {
         return false;
     }
 
-    console.log(month);
-    console.log(year);
-
     const expirationDateConverted = new Date(year, month - 1);
-
-    console.log(expirationDateConverted);
 
     const currentDate = new Date();
 

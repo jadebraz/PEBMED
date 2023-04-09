@@ -20,11 +20,9 @@ export const SubmitButton = styled.button`
     font-weight: 400;
     box-shadow: 0px 8px 15px #00000056;
     }
-
     @media only screen and (max-width: 800px) {
         width: 95%;
     }
-
     @media only screen and (max-width: 450px) {
         font-size: 18px;
     }
