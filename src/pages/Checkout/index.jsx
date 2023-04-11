@@ -1,11 +1,8 @@
-import "../../App.css";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Button from "../../components/Button";
 import Input from "../../components/Input";
-
-import React, { useEffect, useState } from "react";
-
-import { useNavigate } from "react-router-dom";
 
 import Mastercard from "../../assets/img/mastercard.png";
 import Cinza from "../../assets/img/cinza.png";
@@ -15,21 +12,21 @@ import Visa from "../../assets/img/visa.png";
 import Iugu from "../../assets/img/iugu.png";
 import Interrogation from "../../assets/img/interrogation.png";
 
-import { inputcpfmask } from "../../validation/input-mask-cpf";
-import { inputmaskcardnumber } from "../../validation/input-mask-card-number";
-import { inputmaskexpirationdate } from "../../validation/input-mask-expiration-date";
-import { inputmasknumber } from "../../validation/input-mask-number";
+import { inputCpfMask } from "../../validation/input-mask-cpf";
+import { inputMaskCardNumber } from "../../validation/input-mask-card-number";
+import { inputMaskExpirationDate } from "../../validation/input-mask-expiration-date";
+import { inputMaskNumber } from "../../validation/input-mask-number";
+import { isValidFormValues } from "../../validation/isValidFormValues";
 
 import { SubscriptionServices } from "../../services/SubscriptionServices";
 import { OfferServices } from "../../services/OfferServices";
-import { isValidFormValues } from "../../validation/isValidFormValues";
 
 import {
   ContainerMain,
   ContainerForm,
   Title,
   Subtitle,
-  ContainerCard,
+  ContainerCards,
   ContainerIugu,
   TitleIugu,
   ContainerUser,
@@ -58,50 +55,24 @@ import {
 function Checkout() {
   const navigate = useNavigate();
 
-  const [offers, setOffers] = useState();
-  const [values, setValues] = useState({ installments: 1 });
+  const initialFormValues = {
+    holderName: "",
+    installments: 1,
+    cardNumber: "",
+    expirationDate: "",
+    cvv: "",
+    cpf: "",
+    cupom: "",
+  };
+
+  const [offers, setOffers] = useState([]);
+  const [formValues, setFormValues] = useState(initialFormValues);
   const [offerSelected, setOfferSelected] = useState();
-
-  const onChange = (event) => {
-    const { value, name } = event.target;
-
-    let fieldvalue = value;
-
-    if (name === "cpf") {
-      fieldvalue = inputcpfmask(value);
-    } else if (name === "nCartao") {
-      fieldvalue = inputmaskcardnumber(value);
-    } else if (name === "expirationDate") {
-      fieldvalue = inputmaskexpirationdate(value);
-    } else if (name === "cvv") {
-      fieldvalue = inputmasknumber(value);
-    }
-
-    setValues({ ...values, [name]: fieldvalue });
-  };
-
-  const handleSubmitForm = async (event) => {
-    try {
-      event.preventDefault();
-
-      isValidFormValues(values);
-
-      const subscriptionServices = new SubscriptionServices();
-      await subscriptionServices.createSubscription(values);
-
-      navigate("/success", { state: values });
-    } catch (error) {
-      if (error) {
-        alert(error);
-      }
-      alert("Erro na realização da assinatura.");
-    }
-  };
 
   useEffect(() => {
     const offerServices = new OfferServices();
     offerServices
-      .getOffer()
+      .getOffers()
       .then((response) => {
         setOffers(response.data);
         setOfferSelected(response.data[0]);
@@ -112,8 +83,45 @@ function Checkout() {
   }, []);
 
   useEffect(() => {
-    setValues({ ...values, offerSelected });
+    setFormValues({ ...formValues, offerSelected });
   }, [offerSelected]);
+
+  const handleOnChangeFields = (event) => {
+    const { value, name } = event.target;
+
+    let fieldValue = value;
+
+    if (name === "cpf") {
+      fieldValue = inputCpfMask(value);
+    } else if (name === "cardNumber") {
+      fieldValue = inputMaskCardNumber(value);
+    } else if (name === "expirationDate") {
+      fieldValue = inputMaskExpirationDate(value);
+    } else if (name === "cvv") {
+      fieldValue = inputMaskNumber(value);
+    }
+
+    setFormValues({ ...formValues, [name]: fieldValue });
+  };
+
+  const handleSubmitForm = async (event) => {
+    try {
+      event.preventDefault();
+
+      isValidFormValues(formValues);
+
+      const subscriptionServices = new SubscriptionServices();
+      await subscriptionServices.createSubscription(formValues);
+
+      navigate("/success", { state: formValues });
+    } catch (error) {
+      if (error) {
+        alert(error);
+      } else {
+        alert("Erro na realização da assinatura.");
+      }
+    }
+  };
 
   return (
     <ContainerMain>
@@ -121,7 +129,7 @@ function Checkout() {
         <Title>Estamos quase lá!</Title>
         <Subtitle>Insira seus dados de pagamento abaixo:</Subtitle>
 
-        <ContainerCard>
+        <ContainerCards>
           <div className="box1">
             <img src={Mastercard} />
           </div>
@@ -146,7 +154,7 @@ function Checkout() {
             <TitleIugu>Pagamentos por</TitleIugu>
             <img src={Iugu} />
           </ContainerIugu>
-        </ContainerCard>
+        </ContainerCards>
 
         <ContainerUser>
           <Form onSubmit={handleSubmitForm}>
@@ -154,12 +162,12 @@ function Checkout() {
               label="Número do Cartão"
               type="text"
               placeholder="0000 0000 0000 0000"
-              value={values?.nCartao || ""}
+              value={formValues?.cardNumber || ""}
               maxLength="19"
               required
-              name="nCartao"
+              name="cardNumber"
               autoComplete="off"
-              onChange={onChange}
+              onChange={handleOnChangeFields}
             />
 
             <ContainerFlex>
@@ -168,11 +176,11 @@ function Checkout() {
                 type="text"
                 placeholder="MM/AA"
                 maxLength="7"
-                value={values?.expirationDate || ""}
+                value={formValues?.expirationDate || ""}
                 name="expirationDate"
                 autoComplete="off"
                 required
-                onChange={onChange}
+                onChange={handleOnChangeFields}
               />
 
               <Input
@@ -182,9 +190,9 @@ function Checkout() {
                 maxLength="3"
                 name="cvv"
                 autoComplete="off"
-                value={values?.cvv || ""}
+                value={formValues?.cvv || ""}
                 required
-                onChange={onChange}
+                onChange={handleOnChangeFields}
               />
             </ContainerFlex>
 
@@ -193,22 +201,22 @@ function Checkout() {
               type="text"
               placeholder="Seu nome"
               maxLength="25"
-              name="nome"
+              name="holderName"
               required
               autoComplete="off"
-              onChange={onChange}
+              onChange={handleOnChangeFields}
             />
 
             <Input
               label="CPF"
               type="text"
               placeholder="000.000.000-00"
-              value={values?.cpf || ""}
+              value={formValues?.cpf || ""}
               maxLength="14"
               name="cpf"
               autoComplete="off"
               required
-              onChange={onChange}
+              onChange={handleOnChangeFields}
             />
 
             <Input
@@ -218,17 +226,20 @@ function Checkout() {
               maxLength="10"
               name="cupom"
               autoComplete="off"
-              onChange={onChange}
+              onChange={handleOnChangeFields}
             />
 
             {offerSelected?.splittable && (
               <Installments>
                 <Name>Número de parcelas</Name>
                 <select
-                  name="cars"
-                  id="cars"
+                  name="numberInstallments"
+                  id="numberInstallments"
                   onChange={(event) =>
-                    setValues({ ...values, installments: event.target.value })
+                    setFormValues({
+                      ...formValues,
+                      installments: event.target.value,
+                    })
                   }
                 >
                   <option value="2">2</option>
@@ -246,7 +257,7 @@ function Checkout() {
                 <LineInput></LineInput>
               </Installments>
             )}
-            <Button />
+            <Button/>
           </Form>
         </ContainerUser>
       </ContainerForm>

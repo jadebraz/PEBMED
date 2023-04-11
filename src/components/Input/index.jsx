@@ -1,6 +1,5 @@
 import React from 'react';
 
-import '../../App.css';
 import { ContainerInput, Name, InputValue, LineInput } from './styles';
 
 function Input(props) {

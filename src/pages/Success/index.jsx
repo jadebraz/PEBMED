@@ -1,5 +1,3 @@
-import "../../App.css";
-
 import Star from "../../assets/img/star.png";
 import True from "../../assets/img/true.png";
 

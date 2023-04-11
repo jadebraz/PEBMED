@@ -4,7 +4,6 @@ import Logow from '../../assets/img/logow.png';
 import Arrow from '../../assets/img/arrow.png';
 
 import { Container, Logo, IArrow } from './styles';
-import '../../App.css';
 
 function Header() {
   return (

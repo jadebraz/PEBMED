@@ -107,7 +107,7 @@ export const Subtitle = styled.p`
         top: 30px;
     }
 `
-export const ContainerCard = styled.div`
+export const ContainerCards = styled.div`
     display: flex;
     justify-content: space-between;
     position: absolute;
@@ -218,6 +218,9 @@ export const Installments = styled.div`
         font-size: 19px;
     }
     }
+`
+export const NumberInstalments = styled.div`
+
 `
 export const Plan = styled.div`
     width: 60%;

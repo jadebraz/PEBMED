@@ -1,53 +1,57 @@
-import { inputmasknumber } from "./input-mask-number";
+import { inputMaskNumber } from "./input-mask-number";
 
 export const isValidFormValues = (values) => {
-    const cpf = values?.cpf;
-    const expirationDate = values?.expirationDate;
+  const cpf = values?.cpf;
+  const expirationDate = values?.expirationDate;
 
-    if (!isValidCpf(cpf)) {
-        throw new Error('CPF inválido');
-    }
+  if (!isValidCpf(cpf)) {
+    throw new Error("CPF inválido");
+  }
 
-    if(!isValidExpirationDate(expirationDate)) {
-        throw new Error('Data de expiração inválida ou no passado.');
-    }
-}
+  if (!isValidExpirationDate(expirationDate)) {
+    throw new Error("Data de expiração inválida ou no passado.");
+  }
+
+  return true;
+};
 
 const isValidCpf = (cpf) => {
-    var Soma;
-    var Resto;
-    Soma = 0;
+  let Soma;
+  let Resto;
+  Soma = 0;
 
-    cpf = inputmasknumber(cpf);
+  cpf = inputMaskNumber(cpf);
 
-    if (cpf == "00000000000") return false;
+  if (cpf == "00000000000") return false;
 
-  for (let i=1; i<=9; i++) Soma = Soma + parseInt(cpf.substring(i-1, i)) * (11 - i);
+  for (let i = 1; i <= 9; i++)
+    Soma = Soma + parseInt(cpf.substring(i - 1, i)) * (11 - i);
   Resto = (Soma * 10) % 11;
 
-    if ((Resto == 10) || (Resto == 11))  Resto = 0;
-    if (Resto != parseInt(cpf.substring(9, 10)) ) return false;
+  if (Resto == 10 || Resto == 11) Resto = 0;
+  if (Resto != parseInt(cpf.substring(9, 10))) return false;
 
   Soma = 0;
-    for (let i = 1; i <= 10; i++) Soma = Soma + parseInt(cpf.substring(i-1, i)) * (12 - i);
-    Resto = (Soma * 10) % 11;
+  for (let i = 1; i <= 10; i++)
+    Soma = Soma + parseInt(cpf.substring(i - 1, i)) * (12 - i);
+  Resto = (Soma * 10) % 11;
 
-    if ((Resto == 10) || (Resto == 11))  Resto = 0;
-    if (Resto != parseInt(cpf.substring(10, 11) ) ) return false;
-    return true;
-}
+  if (Resto == 10 || Resto == 11) Resto = 0;
+  if (Resto != parseInt(cpf.substring(10, 11))) return false;
+  return true;
+};
 
 const isValidExpirationDate = (expirationDate) => {
-    const month = expirationDate.split('/')[0];
-    const year = expirationDate.split('/')[1];
+  const month = expirationDate.split("/")[0];
+  const year = expirationDate.split("/")[1];
 
-    if (month < 1 || month > 12) {
-        return false;
-    }
+  if (month < 1 || month > 12) {
+    return false;
+  }
 
-    const expirationDateConverted = new Date(year, month - 1);
+  const expirationDateConverted = new Date(year, month - 1);
 
-    const currentDate = new Date();
+  const currentDate = new Date();
 
-    return expirationDateConverted > currentDate;
-}
+  return expirationDateConverted > currentDate;
+};

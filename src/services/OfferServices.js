@@ -1,7 +1,7 @@
 import { api } from './config';
 
 export class OfferServices{
-    async getOffer(data) {
+    async getOffers(data) {
         return api.get('/offer', data)
     }
 }

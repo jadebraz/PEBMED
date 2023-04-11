@@ -1,11 +1,10 @@
 import React from 'react';
 
-import '../../App.css';
 import { SubmitButton } from './styles';
 
 function Button() {
     return (
-        <SubmitButton type="submit">Finalizar pagamento</SubmitButton>
+        <SubmitButton type="submit">Finalizar Pagamento</SubmitButton>
     );
   }
   
