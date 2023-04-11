@@ -2,9 +2,9 @@ import React from 'react';
 
 import { SubmitButton } from './styles';
 
-function Button() {
+function Button(props) {
     return (
-        <SubmitButton type="submit">Finalizar Pagamento</SubmitButton>
+        <SubmitButton type="submit">{props.label}</SubmitButton>
     );
   }
   

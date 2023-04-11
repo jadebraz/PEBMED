@@ -210,6 +210,7 @@ export const Installments = styled.div`
     margin-bottom: 17px;
     cursor: pointer;
     outline: none;
+    font-family: 'DM Sans', sans-serif;
 
     @media only screen and (max-width: 800px) {
         width: 95%;

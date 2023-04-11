@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 
+import { calculateDiscountValue } from "../../Offers/offer-full-price";
+import { calculateInstallmentsValue } from "../../Offers/offer-installments";
+
 import Mastercard from "../../assets/img/mastercard.png";
 import Cinza from "../../assets/img/cinza.png";
 import American from "../../assets/img/american.png";
@@ -257,7 +260,7 @@ function Checkout() {
                 <LineInput></LineInput>
               </Installments>
             )}
-            <Button/>
+            <Button label="Finalizar pagamento" />
           </Form>
         </ContainerUser>
       </ContainerForm>
@@ -275,36 +278,24 @@ function Checkout() {
                 <LineOffer isSelected={offer.id === offerSelected?.id}>
                   <ContainerText>
                     <OfferTitle>{`${offer.title} | ${offer.description}`}</OfferTitle>
-                    <OfferFullPrice>{`De ${offer.fullPrice.toLocaleString(
-                      "pt-BR",
-                      {
-                        style: "currency",
-                        currency: "BRL",
-                      }
-                    )} | Por ${(
-                      offer.fullPrice - offer.discountAmmount
-                    ).toLocaleString("pt-BR", {
-                      style: "currency",
-                      currency: "BRL",
-                    })}`}</OfferFullPrice>
+                    <OfferFullPrice>
+                      {calculateDiscountValue(
+                        offer.fullPrice,
+                        offer.discountAmmount
+                      )}
+                    </OfferFullPrice>
                     <ContainerDiscountPercentage>
                       <DiscountPercentage>
                         {" "}
                         -{offer.discountPercentage * 100}%
                       </DiscountPercentage>
                     </ContainerDiscountPercentage>
-                    <OfferInstallments>{`${offer.installments.toLocaleString(
-                      "pt-BR",
-                      {
-                        style: "currency",
-                        currency: "BRL",
-                      }
-                    )}x de ${(
-                      offer.fullPrice / offer.installments
-                    ).toLocaleString("pt-BR", {
-                      style: "currency",
-                      currency: "BRL",
-                    })}/mês`}</OfferInstallments>
+                    <OfferInstallments>
+                      {calculateInstallmentsValue(
+                        offer.installments,
+                        offer.fullPrice
+                      )}
+                    </OfferInstallments>
                   </ContainerText>
                   <ContantInput className="containerInput"></ContantInput>
                 </LineOffer>

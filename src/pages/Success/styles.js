@@ -44,7 +44,7 @@ export const ContainerText = styled.div`
 `
 export const TitleText = styled.div`
     margin-left: 65px;
-    font-family: 'Google Sans' sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -52,7 +52,7 @@ export const TitleText = styled.div`
     color: #191847;
 `
 export const SubtitleText = styled.div`
-    font-family: 'Google Sans' sans-serif;
+    font-family: 'DM Sans', sans-serif; 
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -88,7 +88,7 @@ export const ContainerOffer = styled.div`
     }
 `
 export const TitleOffer = styled.div`
-    font-family: 'Google Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     margin-top: 15px;
     margin-right: 16px;
     display: flex;
@@ -102,7 +102,7 @@ export const TitleOffer = styled.div`
     color: #191847;
 `
 export const InstallmentsOffer = styled.div`
-    font-family: 'Google Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     margin-top: 10px;
     margin-right: 14px;
     font-style: normal;
@@ -128,7 +128,7 @@ export const ContainerEmail = styled.div`
     margin-top: 23px;
 `
 export const NameEmail = styled.div`
-    font-family: sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -138,6 +138,7 @@ export const NameEmail = styled.div`
 `
 export const Email = styled.div`
     width: 160px;
+    font-family: 'DM Sans', sans-serif;
     margin-left: 170px;
     font-family: sans-serif;
     font-style: normal;
@@ -158,11 +159,12 @@ export const NameCpf = styled.div`
     line-height: 18px;
     color: #C9C5D4;
     margin-left: 24px;
+    font-family: 'DM Sans', sans-serif;
 `
 export const Cpf = styled.div`
     width: 120px;
     margin-left: 169px;
-    font-family: sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

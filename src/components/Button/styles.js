@@ -12,6 +12,7 @@ export const SubmitButton = styled.button`
     margin-top: 15px;
     cursor: pointer;
     transition: all 0.0s ease;
+    font-family: 'DM Sans', sans-serif;
 
     &:hover{
     transform: scale(1.01);

@@ -5,6 +5,8 @@ import { useLocation } from "react-router-dom";
 
 import { SubmitButton } from "../../components/Button/styles";
 
+import { calculateInstallmentsSuccessValue } from '../../Offers/offer-installments-success';
+
 import {
   ContainerFooter,
   Center,
@@ -50,7 +52,8 @@ function Success() {
           <ContainerOffer>
             <TitleOffer>{location.state.offerSelected.title}</TitleOffer>
             <InstallmentsOffer>
-              {" "}
+              {calculateInstallmentsSuccessValue(location.state.offerSelected.fullPrice, location.state.installments)}
+              {/* {" "}
               {location.state.offerSelected.fullPrice.toLocaleString("pt-BR", {
                 style: "currency",
 
@@ -60,7 +63,7 @@ function Success() {
               {(
                 location.state.offerSelected.fullPrice /
                 location.state.installments
-              ).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
+              ).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })} */}
             </InstallmentsOffer>
             <ContainerStar>
               <ImgStart src={Star} />

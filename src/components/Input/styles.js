@@ -14,6 +14,7 @@ export const InputValue = styled.input`
     margin-bottom: 5px;
     font-size: 13px;
     text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
 
     @media only screen and (max-width: 450px) {
         font-size: 19px;
