@@ -11,5 +11,4 @@ export const calculateDiscountValue = (offerFullPrice, offerDiscountAmmount) => 
         style: "currency",
         currency: "BRL",
       })}`
-
 }

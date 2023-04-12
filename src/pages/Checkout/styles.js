@@ -1,426 +1,431 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ContainerMain = styled.main`
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    height: 820px;
-    margin-top: 90px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 820px;
 
-    @media only screen and (max-width: 800px) {
-      width: 330px;
-    }
-`
+  @media only screen and (max-width: 800px) {
+    width: 330px;
+  }
+`;
 export const ContainerForm = styled.div`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  @media only screen and (max-width: 1133px) {
+    width: 70%;
+    height: 900px;
+    position: absolute;
+    margin-left: -700px;
+    margin-top: 220px;
+  }
+  @media only screen and (max-width: 900px) {
     width: 50%;
+    height: 900px;
+    position: absolute;
+    margin-top: 220px;
+  }
+  @media only screen and (max-width: 800px) {
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
-
-    @media only screen and (max-width: 1133px) {
-        width: 70%;
-        height: 900px;
-        position: absolute;
-        margin-left: -700px;
-        margin-top: 30px;
-    }
-    @media only screen and (max-width: 900px) {
-        width: 50%;
-        height: 900px;
-        position: absolute;
-        margin-top: 30px;
-    }
-    @media only screen and (max-width: 800px) {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content:center;
-        align-items:center;
-        margin-left: 180px;
-        margin-top: 900px;
-    }
-    @media only screen and (max-width: 700px) {
-        width: 600px;
-        height: 100%;
-        position: absolute;
-        margin-left: 0px;
-        margin-top: 880px;
-    }
-    @media only screen and (max-width: 550px) {
-        margin-left:-70px;
-    }
-    @media only screen and (max-width: 450px) {
-        width: 450;
-        height: 100%;
-        position: absolute;
-        margin-left: -120px;
-        margin-top: 850px;
-    }
-`
+    align-items: center;
+    margin-left: 250px;
+    margin-top: 1000px;
+  }
+  @media only screen and (max-width: 700px) {
+    width: 600px;
+    height: 100%;
+    position: absolute;
+    margin-left: 0px;
+    margin-top: 990px;
+  }
+  @media only screen and (max-width: 550px) {
+    margin-left: -70px;
+  }
+  @media only screen and (max-width: 450px) {
+    width: 450;
+    height: 100%;
+    position: absolute;
+    margin-left: -120px;
+    margin-top: 1050px;
+  }
+`;
 export const Title = styled.p`
-    position: absolute;
-    width: 497px;
-    height: 90%;
-    left: 248px;
-    top: 132px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 26px;
-    letter-spacing: -0.02em;
-    color: #151516;
+  position: absolute;
+  width: 497px;
+  height: 90%;
+  left: 248px;
+  top: 132px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: -0.02em;
+  color: #151516;
 
-    @media only screen and (max-width: 450px) {
-        font-size: 25px;
-    }
-    @media only screen and (max-width: 800px) {
-        font-size: 24px;
-    }
-    @media only screen and (max-width: 900px) {
-        top: 0px;
-    }
-    @media only screen and (max-width: 1133px) {
-        top: 0px;
-    }
-`
+  @media only screen and (max-width: 450px) {
+    font-size: 25px;
+  }
+  @media only screen and (max-width: 800px) {
+    font-size: 24px;
+  }
+  @media only screen and (max-width: 900px) {
+    top: 0px;
+  }
+  @media only screen and (max-width: 1133px) {
+    top: 0px;
+  }
+`;
 export const Subtitle = styled.p`
-    position: absolute;
-    width: 311px;
-    height: 21px;
-    left: 248px;
-    top: 167px;
-    font-style: normal;
-    font-weight: 400;
+  position: absolute;
+  width: 311px;
+  height: 21px;
+  left: 248px;
+  top: 167px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+  color: #151516;
+
+  @media only screen and (max-width: 1133px) {
+    top: 30px;
+  }
+  @media only screen and (max-width: 800px) {
     font-size: 16px;
-    line-height: 21px;
-    letter-spacing: -0.02em;
-    color: #151516;
-
-    @media only screen and (max-width: 1133px) {
-        top:30px;
-    }
-    @media only screen and (max-width: 800px) {
-        font-size: 16px;
-    }
-    @media only screen and (max-width: 900px) {
-        top: 30px;
-    }
-`
+  }
+  @media only screen and (max-width: 900px) {
+    top: 30px;
+  }
+`;
 export const ContainerCards = styled.div`
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    width: 215px;
-    height: 50px;
-    left: 300px;
-    top: 218px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 215px;
+  height: 50px;
+  left: 300px;
+  top: 218px;
 
-    @media only screen and (max-width: 1133px) {
-        top:80px;
-    }
-    @media only screen and (max-width: 900px) {
-        top: 80px;
-    }
-`
+  @media only screen and (max-width: 1133px) {
+    top: 80px;
+  }
+  @media only screen and (max-width: 900px) {
+    top: 80px;
+  }
+`;
 export const ContainerIugu = styled.div`
-    width: 100px;
-    position: absolute;
-    left: 20%;
-    top: 70%;
+  width: 100px;
+  position: absolute;
+  left: 20%;
+  top: 70%;
 
-    img{
+  img {
     width: 28px;
     position: absolute;
     left: 80%;
     top: 30%;
-}
-`
+  }
+`;
 export const TitleIugu = styled.div`
-    font-size: 10px;
-    color: #E1DEE8;
-`
+  font-size: 10px;
+  color: #e1dee8;
+`;
 export const ContainerUser = styled.div`
-    position: absolute;
-    left: 248px;
-    top: 300px;
-    font-size: 12px;
+  position: absolute;
+  left: 248px;
+  top: 300px;
+  font-size: 12px;
 
-    @media only screen and (max-width: 1133px) {
-        top:170px;
-    }
-    @media only screen and (max-width: 900px) {
-        top: 170px;
-    }
-`
+  @media only screen and (max-width: 1133px) {
+    top: 170px;
+  }
+  @media only screen and (max-width: 900px) {
+    top: 170px;
+  }
+`;
 
 export const Form = styled.form`
-    width: 495px;
-`
+  width: 495px;
+`;
 export const ContainerInput = styled.div`
-    margin-bottom: 20px;
-`
+  margin-bottom: 20px;
+`;
 export const InputValue = styled.input`
-    cursor: pointer;
-    outline: none;
-    font-style: normal;
-    letter-spacing: -0.02em;
-    width: 80%;
-    border:  #a9a1bd;
-    padding: 10px 0px;
-    margin-bottom: 5px;
-    font-size: 13px;
-    text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  width: 80%;
+  border: #a9a1bd;
+  padding: 10px 0px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  text-transform: uppercase;
 
-    @media only screen and (max-width: 450px) {
-        font-size: 19px;
-    }
-`
+  @media only screen and (max-width: 450px) {
+    font-size: 19px;
+  }
+`;
 export const LineInput = styled.div`
-    border: 1px solid #F4F3F6;
-    width: 80%;
-    margin-bottom: 30px;
+  border: 1px solid #f4f3f6;
+  width: 80%;
+  margin-bottom: 30px;
 
-    @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 800px) {
     width: 95%;
-    }
-`
+  }
+`;
 export const Name = styled.p`
-    font-size: 13px;
-    color: #666173;
+  font-size: 13px;
+  color: #666173;
 
-    @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 450px) {
     font-size: 18px;
-    }
-`
+  }
+`;
 export const ContainerFlex = styled.div`
-    display: flex;
-    gap: 30px;
-    margin-bottom: -20px;
-`
+  display: flex;
+  gap: 60px;
+  width: 80%;
+`;
 export const Installments = styled.div`
-    font-size: 13px;
-    color: #666173;
+  font-size: 13px;
+  color: #666173;
 
-    select{
+  select {
     display: flex;
-    border: none;
-    margin-top: 13px;
     width: 80%;
     margin-bottom: 17px;
     cursor: pointer;
     outline: none;
-    font-family: 'DM Sans', sans-serif;
+    font-family: "DM Sans", sans-serif;
+    padding: 10px 0px;
+    margin-bottom: 5px;
+    border: none;
+    border-bottom: 1px solid #f4f3f6;
 
     @media only screen and (max-width: 800px) {
-        width: 95%;
+      width: 80%;
     }
     @media only screen and (max-width: 450px) {
-        font-size: 19px;
+      font-size: 19px;
     }
-    }
-`
-export const NumberInstalments = styled.div`
-
-`
+  }
+`;
+export const NumberInstalments = styled.div``;
 export const Plan = styled.div`
-    width: 60%;
-    height: 100%;
-    display: flex;
-    justify-content: end;
-    margin-top: 30px;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  margin-top: 30px;
 
-    @media only screen and (max-width: 1133px) {
-        width: 50%;
-        height: 900px;
-        display: flex;
-        justify-content:center;
-        margin-left: 450px;
-    }
-    @media only screen and (max-width: 900px) {
-        width: 40%;
-        height: 900px;
-        display: flex;
-        justify-content: center;
-    }
-    @media only screen and (max-width: 700px) {
-        width: 50%;
-        height: 100%;
-        position: absolute;
-        left: -340px;
-        margin-top: 450px;
-    }
-    @media only screen and (max-width: 800px) {
-        width: 70%;
-        height: 50%;
-        position: absolute;
-        margin-top: -400px;   
-    }
-`
-export const Premium = styled.div`
-    width: 330px;
+  @media only screen and (max-width: 1133px) {
+    width: 50%;
     height: 900px;
     display: flex;
-`
+    justify-content: center;
+    margin-left: 450px;
+  }
+  @media only screen and (max-width: 900px) {
+    width: 40%;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+  }
+  @media only screen and (max-width: 700px) {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: -340px;
+    margin-top: 450px;
+  }
+  @media only screen and (max-width: 800px) {
+    width: 70%;
+    height: 50%;
+    position: absolute;
+    margin-top: -250px;
+  }
+`;
+export const Premium = styled.div`
+  width: 330px;
+  height: 900px;
+  display: flex;
+`;
 export const ContainerEmailCheckout = styled.div`
-    box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  top: 131px;
+
+  @media only screen and (max-width: 900px) {
+    width: 30%;
+    height: 60%;
     position: absolute;
-    width: 200px;
-    height: 50px;
-    top: 131px;
-
-    @media only screen and (max-width: 900px) {
-        width: 30%;
-        height: 60%;
-        position: absolute;
-    }
-    @media only screen and (max-width: 800px) {
-        width: 60%;
-        height: 20%;
-        display: flex;
-        flex-direction: column;
-        align-items:center;
-        margin-top: -130px;   
-    }
-    @media only screen and (max-width: 550px) {
-        width: 300px;
-    }
-    @media only screen and (max-width: 450px) {
-        width: 100%;
-    }
-`
-export const EmailCheckout = styled.div`
-    width: 133px;
-    height: 15px;
-    margin-top: 5px;
-    font-size: 11px;
-    font-weight: 400;
-    border: 1px solid #F4F3F6;
-    border-radius:12px;
-    padding: 10px 10px;
-    display: flex;
-    align-items:center;
-
-    @media only screen and (max-width: 800px) {
-    font-size: 15px;
-    width: 180px;
-    }
-    @media only screen and (max-width: 450px) {
-    font-size: 15px;
-    width: 180px;
-    }
-`
-export const NameEmailCheckout = styled.div`
-    font-size: 20px;
-
-    @media only screen and (max-width: 800px) {
-    font-size: 25px;
-    }
-    @media only screen and (max-width: 450px) {
-    font-size: 25px;
-    }
-`
-export const ContainerCardOfferr = styled.div`
-    position: absolute;
-    width: 330px;
-    font-family: 'DM Sans', sans-serif;
-    height: 230px;
-    top: 218px;
-
-    @media only screen and (max-width: 900px) {
-        height: 80%;
-        position: absolute;
-        margin-top: 0px;
-    }
-    @media only screen and (max-width: 800px) {
-        height: 300px;
-        width: 470px;
-        display: flex;
-        flex-direction: column;
-        justify-content:end;
-        margin-top: -150px;
-        margin-left: -70px;
-    }
-`
-export const LineOffer = styled.div.attrs(props => ({
-    border: props.isSelected ? '1px solid #191847' : '1px solid #E1DEE8'
-}))`
-    height: 100px; 
-    border-radius: 15px;
-    display: flex;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: ${props => props.isSelected ? '1px solid #191847' : '1px solid #E1DEE8'};
-    box-shadow: 0px 8px 10px #00000056;
-`
-export const ContainerText = styled.div`
+  }
+  @media only screen and (max-width: 800px) {
+    width: 60%;
+    height: 20%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-`
-export const OfferTitle = styled.div`
-    margin:  0px 20px 0px;
-    font-size: 14px;
-    font-style: normal;
-    line-height: 18px;
-    width: 200px;
+    align-items: center;
+    margin-top: -130px;
+  }
+  @media only screen and (max-width: 550px) {
+    width: 300px;
+  }
+  @media only screen and (max-width: 450px) {
+    width: 100%;
+  }
+`;
+export const EmailCheckout = styled.div`
+  width: 133px;
+  height: 15px;
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: 400;
+  border: 1px solid #f4f3f6;
+  border-radius: 12px;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
 
-    @media only screen and (max-width: 450px) {
-        font-size: 17px;
-        width: 300px;
-    }
-`
-export const OfferFullPrice = styled.div`
-    font-size: 12px;
-    width: 200px;
-    font-weight: 400;
-    margin-left: 20px;
-    font-style: normal;
-    color: #191847;
-    line-height: 16px;
-
-    @media only screen and (max-width: 450px) {
-        font-size: 13px;
-    }
-`
-export const OfferInstallments = styled.div`
-    font-size: 10px;
+  @media only screen and (max-width: 800px) {
+    font-size: 15px;
     width: 180px;
-    font-weight: 400;
-    margin-left: 20px;
-    margin-top: 5px;
-    font-style: normal;
-    color: #F5850B;
-    line-height: 13px;
+  }
+  @media only screen and (max-width: 450px) {
+    font-size: 15px;
+    width: 180px;
+  }
+`;
+export const NameEmailCheckout = styled.div`
+  font-size: 20px;
+  width: 250px;
 
-    @media only screen and (max-width: 450px) {
-        font-size: 11.5px;
-    }
-`
-export const ContainerDiscountPercentage = styled.div`
-    width: 40px;
-    height: 16px;
-    left: 210px;
-    top: 40.5px;
-    position: absolute;
-    background: #F5850B;
+  @media only screen and (max-width: 800px) {
+    font-size: 25px;
     display: flex;
+    width: 100vw;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+  }
+  @media only screen and (max-width: 450px) {
+    font-size: 25px;
+  }
+`;
+export const ContainerCardOfferr = styled.div`
+  position: absolute;
+  width: 330px;
+  font-family: "DM Sans", sans-serif;
+  height: 230px;
+  top: 218px;
 
-    @media only screen and (max-width: 800px) {
-        margin-left: 150px;
-    }
-`
-export const DiscountPercentage= styled.div`
-    font-size: 10px;
-    color: #FFFFFF;
-    font-weight: 400;
-`
+  @media only screen and (max-width: 900px) {
+    height: 80%;
+    position: absolute;
+    margin-top: 0px;
+  }
+  @media only screen and (max-width: 800px) {
+    height: 300px;
+    width: 470px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-top: -150px;
+    margin-left: -70px;
+  }
+`;
+export const LineOffer = styled.div.attrs((props) => ({
+  border: props.isSelected ? "1px solid #191847" : "1px solid #E1DEE8",
+}))`
+  height: 100px;
+  border-radius: 15px;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: ${(props) =>
+    props.isSelected ? "1px solid #191847" : "1px solid #E1DEE8"};
+  box-shadow: 0px 8px 10px #00000056;
+`;
+export const ContainerText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+export const OfferTitle = styled.div`
+  margin: 0px 20px 0px;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 18px;
+  width: 200px;
+
+  @media only screen and (max-width: 450px) {
+    font-size: 17px;
+    width: 300px;
+  }
+`;
+export const OfferFullPrice = styled.div`
+  font-size: 12px;
+  width: 200px;
+  font-weight: 400;
+  margin-left: 20px;
+  font-style: normal;
+  color: #191847;
+  line-height: 16px;
+
+  @media only screen and (max-width: 450px) {
+    font-size: 13px;
+  }
+`;
+export const OfferInstallments = styled.div`
+  font-size: 10px;
+  width: 180px;
+  font-weight: 400;
+  margin-left: 20px;
+  margin-top: 5px;
+  font-style: normal;
+  color: #f5850b;
+  line-height: 13px;
+
+  @media only screen and (max-width: 450px) {
+    font-size: 11.5px;
+  }
+`;
+export const ContainerDiscountPercentage = styled.div`
+  width: 40px;
+  height: 16px;
+  left: 210px;
+  top: 40.5px;
+  position: absolute;
+  background: #f5850b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+
+  @media only screen and (max-width: 800px) {
+    margin-left: 150px;
+  }
+`;
+export const DiscountPercentage = styled.div`
+  font-size: 10px;
+  color: #ffffff;
+  font-weight: 400;
+`;
 export const ContantInput = styled.div`
-    input {
+  input {
     width: 15px;
     height: 15px;
     display: flex;
@@ -430,24 +435,25 @@ export const ContantInput = styled.div`
     margin-top: 41px;
     margin-left: 40px;
     cursor: pointer;
-    }
-`
+  }
+`;
 export const ContainerAbout = styled.div`
-    p{
+  p {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 12px;
     color: #151516;
-    margin-top: 10px;
+    margin-top: -5px;
     margin-left: -10px;
+    cursor: pointer;
 
     @media only screen and (max-width: 800px) {
-        margin-left: -40px;
+      margin-left: -40px;
     }
-    }
+  }
 
-    img{
+  img {
     display: flex;
     flex-direction: column;
     width: 15px;
@@ -456,8 +462,7 @@ export const ContainerAbout = styled.div`
     cursor: pointer;
 
     @media only screen and (max-width: 800px) {
-        margin-left: 270px;
+      margin-left: 270px;
     }
-}
-`
-
+  }
+`;

@@ -9,7 +9,7 @@ export const SubmitButton = styled.button`
     background: #191847;
     color: #ffffff;
     height: 50px;
-    margin-top: 15px;
+    margin-top: 30px;
     cursor: pointer;
     transition: all 0.0s ease;
     font-family: 'DM Sans', sans-serif;
@@ -22,7 +22,7 @@ export const SubmitButton = styled.button`
     box-shadow: 0px 8px 15px #00000056;
     }
     @media only screen and (max-width: 800px) {
-        width: 95%;
+        width: 80%;
     }
     @media only screen and (max-width: 450px) {
         font-size: 18px;

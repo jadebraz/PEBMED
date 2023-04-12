@@ -245,19 +245,41 @@ function Checkout() {
                     })
                   }
                 >
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
+                  <option value="2">
+                    {calculateInstallmentsValue(2, offerSelected.fullPrice)}
+                  </option>
+                  <option value="3">
+                    {calculateInstallmentsValue(3, offerSelected.fullPrice)}
+                  </option>
+                  <option value="4">
+                    {calculateInstallmentsValue(4, offerSelected.fullPrice)}
+                  </option>
+                  <option value="5">
+                    {calculateInstallmentsValue(5, offerSelected.fullPrice)}
+                  </option>
+                  <option value="6">
+                    {calculateInstallmentsValue(6, offerSelected.fullPrice)}
+                  </option>
+                  <option value="7">
+                    {calculateInstallmentsValue(7, offerSelected.fullPrice)}
+                  </option>
+                  <option value="8">
+                    {calculateInstallmentsValue(8, offerSelected.fullPrice)}
+                  </option>
+                  <option value="9">
+                    {calculateInstallmentsValue(9, offerSelected.fullPrice)}
+                  </option>
+                  <option value="10">
+                    {calculateInstallmentsValue(10, offerSelected.fullPrice)}
+                  </option>
+                  <option value="11">
+                    {calculateInstallmentsValue(11, offerSelected.fullPrice)}
+                  </option>
+                  <option value="12">
+                    {calculateInstallmentsValue(12, offerSelected.fullPrice)}
+                  </option>
                 </select>
-                <LineInput></LineInput>
+                {/* <LineInput></LineInput> */}
               </Installments>
             )}
             <Button label="Finalizar pagamento" />

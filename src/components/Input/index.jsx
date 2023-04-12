@@ -16,7 +16,6 @@ function Input(props) {
                 autoComplete={props.autoComplete}
                 onChange={props.onChange}>
             </InputValue>
-            <LineInput></LineInput>
         </ContainerInput>
     );
   }

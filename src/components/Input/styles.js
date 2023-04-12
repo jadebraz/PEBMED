@@ -8,25 +8,19 @@ export const InputValue = styled.input`
     outline: none;
     font-style: normal;
     letter-spacing: -0.02em;
+    /* background-color: red; */
     width: 80%;
-    border:  #a9a1bd;
+    border: none;
+    border-bottom: 1px solid #F4F3F6;
     padding: 10px 0px;
     margin-bottom: 5px;
+    margin-top: 0px;
     font-size: 13px;
     text-transform: uppercase;
     font-family: 'DM Sans', sans-serif;
 
     @media only screen and (max-width: 450px) {
         font-size: 19px;
-    }
-`
-export const LineInput = styled.div`
-    border: 1px solid #F4F3F6;
-    width: 80%;
-    margin-bottom: 30px;
-
-    @media only screen and (max-width: 800px) {
-    width: 95%;
     }
 `
 export const Name = styled.p`
