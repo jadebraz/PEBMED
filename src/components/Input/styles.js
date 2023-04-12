@@ -8,7 +8,6 @@ export const InputValue = styled.input`
     outline: none;
     font-style: normal;
     letter-spacing: -0.02em;
-    /* background-color: red; */
     width: 80%;
     border: none;
     border-bottom: 1px solid #F4F3F6;

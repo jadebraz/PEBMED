@@ -152,7 +152,6 @@ export const ContainerUser = styled.div`
     top: 170px;
   }
 `;
-
 export const Form = styled.form`
   width: 495px;
 `;
@@ -173,15 +172,6 @@ export const InputValue = styled.input`
 
   @media only screen and (max-width: 450px) {
     font-size: 19px;
-  }
-`;
-export const LineInput = styled.div`
-  border: 1px solid #f4f3f6;
-  width: 80%;
-  margin-bottom: 30px;
-
-  @media only screen and (max-width: 800px) {
-    width: 95%;
   }
 `;
 export const Name = styled.p`

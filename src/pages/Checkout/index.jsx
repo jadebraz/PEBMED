@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 
-import { calculateDiscountValue } from "../../Offers/offer-full-price";
-import { calculateInstallmentsValue } from "../../Offers/offer-installments";
+import { calculateDiscountValue } from "../../shared/offer-full-price";
+import { calculateInstallmentsValue } from "../../shared/offer-installments";
 
 import Mastercard from "../../assets/img/mastercard.png";
 import Cinza from "../../assets/img/cinza.png";
@@ -279,7 +279,6 @@ function Checkout() {
                     {calculateInstallmentsValue(12, offerSelected.fullPrice)}
                   </option>
                 </select>
-                {/* <LineInput></LineInput> */}
               </Installments>
             )}
             <Button label="Finalizar pagamento" />
