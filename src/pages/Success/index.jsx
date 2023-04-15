@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 
 import { SubmitButton } from "../../components/Button/styles";
 
-import { calculateInstallmentsSuccessValue } from "../../Offers/offer-installments-success";
+import { calculateInstallmentsSuccessValue } from "../../shared/offer-installments-success";
 
 import {
   ContainerFooter,

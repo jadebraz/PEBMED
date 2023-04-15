@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 import Button from "../../components/Button";
 import Input from "../../components/Input";
+import Card from "../../components/Card";
 
-import { calculateDiscountValue } from "../../shared/offer-full-price";
 import { calculateInstallmentsValue } from "../../shared/offer-installments";
 
 import Mastercard from "../../assets/img/mastercard.png";
@@ -35,7 +35,6 @@ import {
   ContainerUser,
   Form,
   Name,
-  LineInput,
   ContainerFlex,
   Installments,
   Plan,
@@ -296,30 +295,7 @@ function Checkout() {
           <ContainerCardOfferr>
             {offers?.map((offer) => (
               <div key={offer.id} onClick={() => setOfferSelected(offer)}>
-                <LineOffer isSelected={offer.id === offerSelected?.id}>
-                  <ContainerText>
-                    <OfferTitle>{`${offer.title} | ${offer.description}`}</OfferTitle>
-                    <OfferFullPrice>
-                      {calculateDiscountValue(
-                        offer.fullPrice,
-                        offer.discountAmmount
-                      )}
-                    </OfferFullPrice>
-                    <ContainerDiscountPercentage>
-                      <DiscountPercentage>
-                        {" "}
-                        -{offer.discountPercentage * 100}%
-                      </DiscountPercentage>
-                    </ContainerDiscountPercentage>
-                    <OfferInstallments>
-                      {calculateInstallmentsValue(
-                        offer.installments,
-                        offer.fullPrice
-                      )}
-                    </OfferInstallments>
-                  </ContainerText>
-                  <ContantInput className="containerInput"></ContantInput>
-                </LineOffer>
+                <Card offer={offer} offerSelected={offerSelected} />
                 <br />
               </div>
             ))}

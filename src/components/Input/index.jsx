@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ContainerInput, Name, InputValue, LineInput } from './styles';
+import { ContainerInput, Name, InputValue } from './styles';
 
 function Input(props) {
     return (
