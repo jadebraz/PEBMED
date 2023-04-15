@@ -8,7 +8,7 @@ It is a project that aims to organize customer information in a database called 
 
  - **Axios**, is an HTTP client based on **Promises** to make requests. It can be used in the browser as in Node.js or any API service. I used axios to assist me in requesting HTTP within the project.
  
- - **Node.js**, allows data to be sent to the front end without requiring multiple connections that standardize the information and delay the execution of the request.
+ - **Node.js**, allows data to be sent to the front end without requiring multiple connections that standardize the information and delay the execution of the request. In the project it was used in the form for real-time data exchange. Interacting with the API and even regarding validations.
 
  - **Styled-Components**, allows us to create style components when writing CSS code within a JavaScript file.
 
