@@ -19,7 +19,7 @@ import { inputCpfMask } from "../../validation/input-mask-cpf";
 import { inputMaskCardNumber } from "../../validation/input-mask-card-number";
 import { inputMaskExpirationDate } from "../../validation/input-mask-expiration-date";
 import { inputMaskNumber } from "../../validation/input-mask-number";
-import { isValidFormValues } from "../../validation/isValidFormValues";
+import { isValidFormValues, isValidCpf, isValidCardNumber } from "../../validation/isValidFormValues";
 
 import { SubscriptionServices } from "../../services/SubscriptionServices";
 import { OfferServices } from "../../services/OfferServices";
@@ -42,16 +42,8 @@ import {
   ContainerEmailCheckout,
   NameEmailCheckout,
   ContainerCardOfferr,
-  LineOffer,
-  ContainerText,
-  ContainerDiscountPercentage,
-  DiscountPercentage,
-  ContantInput,
   ContainerAbout,
   EmailCheckout,
-  OfferTitle,
-  OfferFullPrice,
-  OfferInstallments,
 } from "./styles";
 
 function Checkout() {
@@ -67,8 +59,19 @@ function Checkout() {
     cupom: "",
   };
 
+  const initialIsValidFieldsValues = {
+    holderName: true,
+    installments: true,
+    cardNumber: true,
+    expirationDate: true,
+    cvv: true,
+    cpf: true,
+    cupom: true,
+  };
+
   const [offers, setOffers] = useState([]);
   const [formValues, setFormValues] = useState(initialFormValues);
+  const [isValidFieldsValues, setIsValidFieldsValues] = useState(initialIsValidFieldsValues);
   const [offerSelected, setOfferSelected] = useState();
 
   useEffect(() => {
@@ -95,8 +98,16 @@ function Checkout() {
 
     if (name === "cpf") {
       fieldValue = inputCpfMask(value);
+      setIsValidFieldsValues({
+        ...isValidFieldsValues,
+        cpf: isValidCpf(fieldValue)
+      });
     } else if (name === "cardNumber") {
       fieldValue = inputMaskCardNumber(value);
+      setIsValidFieldsValues({
+        ...isValidFieldsValues,
+        cardNumber: isValidCardNumber(fieldValue)
+      });
     } else if (name === "expirationDate") {
       fieldValue = inputMaskExpirationDate(value);
     } else if (name === "cvv") {
@@ -168,6 +179,7 @@ function Checkout() {
               maxLength="19"
               required
               name="cardNumber"
+              error={!isValidFieldsValues.cardNumber}
               autoComplete="off"
               onChange={handleOnChangeFields}
             />
@@ -176,8 +188,9 @@ function Checkout() {
               <Input
                 label="Validade"
                 type="text"
-                placeholder="MM/AA"
+                placeholder="MM/AAAA"
                 maxLength="7"
+                error={false}
                 value={formValues?.expirationDate || ""}
                 name="expirationDate"
                 autoComplete="off"
@@ -191,6 +204,7 @@ function Checkout() {
                 placeholder="000"
                 maxLength="3"
                 name="cvv"
+                error={false}
                 autoComplete="off"
                 value={formValues?.cvv || ""}
                 required
@@ -218,6 +232,7 @@ function Checkout() {
               name="cpf"
               autoComplete="off"
               required
+              error={!isValidFieldsValues.cpf}
               onChange={handleOnChangeFields}
             />
 

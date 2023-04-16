@@ -15,7 +15,7 @@ export const isValidFormValues = (values) => {
   return true;
 };
 
-const isValidCpf = (cpf) => {
+export const isValidCpf = (cpf) => {
   let Soma;
   let Resto;
   Soma = 0;
@@ -40,6 +40,10 @@ const isValidCpf = (cpf) => {
   if (Resto != parseInt(cpf.substring(10, 11))) return false;
   return true;
 };
+
+export const isValidCardNumber = (cardNumber) => {
+  return cardNumber.length === 19;
+}
 
 const isValidExpirationDate = (expirationDate) => {
   const month = expirationDate.split("/")[0];

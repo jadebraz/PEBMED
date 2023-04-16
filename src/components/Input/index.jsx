@@ -1,12 +1,18 @@
-import React from 'react';
+// import React from 'react';
+import React, {  useState } from "react";
 
 import { ContainerInput, Name, InputValue } from './styles';
 
 function Input(props) {
+
+    const [isFocused, setIsFocused] = useState(false);
+
     return (
         <ContainerInput>
             <Name>{props.label}</Name>
-            <InputValue
+            <InputValue isFocused={isFocused} isErrored={props.error}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
                 type={props.type}
                 placeholder={props.placeholder}
                 value={props.value}
