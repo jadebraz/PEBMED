@@ -19,7 +19,7 @@ import { inputCpfMask } from "../../validation/input-mask-cpf";
 import { inputMaskCardNumber } from "../../validation/input-mask-card-number";
 import { inputMaskExpirationDate } from "../../validation/input-mask-expiration-date";
 import { inputMaskNumber } from "../../validation/input-mask-number";
-import { isValidFormValues, isValidCpf, isValidCardNumber } from "../../validation/isValidFormValues";
+import { isValidFormValues, isValidCpf, isValidCardNumber, isValidExpirationDate, isValidCvv, isValidholderName } from "../../validation/isValidFormValues";
 
 import { SubscriptionServices } from "../../services/SubscriptionServices";
 import { OfferServices } from "../../services/OfferServices";
@@ -110,8 +110,21 @@ function Checkout() {
       });
     } else if (name === "expirationDate") {
       fieldValue = inputMaskExpirationDate(value);
+      setIsValidFieldsValues({
+        ...isValidFieldsValues,
+        expirationDate: isValidExpirationDate(fieldValue)
+      });
     } else if (name === "cvv") {
       fieldValue = inputMaskNumber(value);
+      setIsValidFieldsValues({
+        ...isValidFieldsValues,
+        cvv: isValidCvv(fieldValue)
+      });
+    } else if (name === "holderName") {
+      setIsValidFieldsValues({
+        ...isValidFieldsValues,
+        holderName : isValidholderName(fieldValue)
+      });
     }
 
     setFormValues({ ...formValues, [name]: fieldValue });
@@ -190,7 +203,7 @@ function Checkout() {
                 type="text"
                 placeholder="MM/AAAA"
                 maxLength="7"
-                error={false}
+                error={!isValidFieldsValues.expirationDate}
                 value={formValues?.expirationDate || ""}
                 name="expirationDate"
                 autoComplete="off"
@@ -204,7 +217,7 @@ function Checkout() {
                 placeholder="000"
                 maxLength="3"
                 name="cvv"
-                error={false}
+                error={!isValidFieldsValues.cvv}
                 autoComplete="off"
                 value={formValues?.cvv || ""}
                 required
@@ -219,6 +232,7 @@ function Checkout() {
               maxLength="25"
               name="holderName"
               required
+              error={!isValidFieldsValues.holderName}
               autoComplete="off"
               onChange={handleOnChangeFields}
             />

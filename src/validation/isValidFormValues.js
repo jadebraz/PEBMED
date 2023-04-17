@@ -45,7 +45,15 @@ export const isValidCardNumber = (cardNumber) => {
   return cardNumber.length === 19;
 }
 
-const isValidExpirationDate = (expirationDate) => {
+export const isValidCvv = (cvv) => {
+  return cvv.length === 5;
+}
+
+export const isValidholderName = (holderName) => {
+  return holderName.length === 5;
+}
+
+export const isValidExpirationDate = (expirationDate) => {
   const month = expirationDate.split("/")[0];
   const year = expirationDate.split("/")[1];
 
