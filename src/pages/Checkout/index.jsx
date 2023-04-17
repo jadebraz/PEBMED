@@ -19,7 +19,7 @@ import { inputCpfMask } from "../../validation/input-mask-cpf";
 import { inputMaskCardNumber } from "../../validation/input-mask-card-number";
 import { inputMaskExpirationDate } from "../../validation/input-mask-expiration-date";
 import { inputMaskNumber } from "../../validation/input-mask-number";
-import { isValidFormValues, isValidCpf, isValidCardNumber, isValidExpirationDate, isValidCvv, isValidholderName } from "../../validation/isValidFormValues";
+import { isValidFormValues, isValidCpf, isValidCardNumber, isValidExpirationDate, isValidCvv } from "../../validation/isValidFormValues";
 
 import { SubscriptionServices } from "../../services/SubscriptionServices";
 import { OfferServices } from "../../services/OfferServices";
@@ -120,12 +120,7 @@ function Checkout() {
         ...isValidFieldsValues,
         cvv: isValidCvv(fieldValue)
       });
-    } else if (name === "holderName") {
-      setIsValidFieldsValues({
-        ...isValidFieldsValues,
-        holderName : isValidholderName(fieldValue)
-      });
-    }
+    } 
 
     setFormValues({ ...formValues, [name]: fieldValue });
   };

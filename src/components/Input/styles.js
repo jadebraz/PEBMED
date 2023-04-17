@@ -7,7 +7,7 @@ export const ContainerInput = styled.div`
  
 `
 export const InputValue = styled.input.attrs((props) => ({
-    border: props.isFocused ? "2px solid #00FF00" : props.isErrored ? "2px solid #FF0000" : "2px solid #E1DEE8" ,
+    border: props.isFocused ? "2px solid #FF8C00" : props.isErrored ? "2px solid #FF0000" : "2px solid #E1DEE8" ,
   }))`
     cursor: pointer;
     outline: none;
@@ -22,7 +22,7 @@ export const InputValue = styled.input.attrs((props) => ({
     text-transform: uppercase;
     font-family: 'DM Sans', sans-serif;
     border-bottom: ${(props) =>
-     props.isFocused ? "2px solid #00FF00" : props.isErrored ? "2px solid #FF0000" : "2px solid #E1DEE8"};
+     props.isFocused ? "2px solid #FF8C00" : props.isErrored ? "2px solid #FF0000" : "2px solid #E1DEE8"};
 
     @media only screen and (max-width: 450px) {
         font-size: 19px;
