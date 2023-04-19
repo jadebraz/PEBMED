@@ -1,5 +1,7 @@
 import { inputMaskNumber } from "./input-mask-number";
 
+
+
 export const isValidFormValues = (values) => {
   const cpf = values?.cpf;
   const expirationDate = values?.expirationDate;
@@ -46,7 +48,7 @@ export const isValidCardNumber = (cardNumber) => {
 };
 
 export const isValidCvv = (cvv) => {
-  return cvv.length === 5;
+  return cvv.length === 3;
 };
 
 export const isValidExpirationDate = (expirationDate) => {

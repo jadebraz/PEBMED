@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { useToast } from "../../hooks/toast";
+
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import Card from "../../components/Card";
@@ -69,6 +71,8 @@ function Checkout() {
     cupom: true,
   };
 
+  const { addToast } = useToast();
+
   const [offers, setOffers] = useState([]);
   const [formValues, setFormValues] = useState(initialFormValues);
   const [isValidFieldsValues, setIsValidFieldsValues] = useState(initialIsValidFieldsValues);
@@ -83,7 +87,11 @@ function Checkout() {
         setOfferSelected(response.data[0]);
       })
       .catch((error) => {
-        alert("Erro na busca dos planos.");
+        addToast({
+          type: 'error',
+          title: 'Erro na realização da assinatura',
+          description: 'Ocorreu um erro ao tentar criar a assinatura.'
+        });
       });
   }, []);
 
@@ -136,10 +144,18 @@ function Checkout() {
 
       navigate("/success", { state: formValues });
     } catch (error) {
-      if (error) {
-        alert(error);
+      if (error && error.message) {
+        addToast({
+          type: 'error',
+          title: 'Erro',
+          description: error.message,
+        });
       } else {
-        alert("Erro na realização da assinatura.");
+        addToast({
+          type: 'error',
+          title: 'Erro na realização da assinatura',
+          description: 'Ocorreu um erro ao tentar criar a assinatura.'
+        });
       }
     }
   };
@@ -305,6 +321,7 @@ function Checkout() {
               </Installments>
             )}
             <Button label="Finalizar pagamento" />
+           
           </Form>
         </ContainerUser>
       </ContainerForm>
